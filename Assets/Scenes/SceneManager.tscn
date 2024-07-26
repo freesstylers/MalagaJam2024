@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://qdiguxhfnsv8"]
+
+[ext_resource type="PackedScene" uid="uid://c6kwux5euwagh" path="res://Assets/Prefabs/Transition.tscn" id="1_8508n"]
+[ext_resource type="Script" path="res://Assets/Scripts/GlobalManager.gd" id="1_ccncl"]
+
+[node name="SceneManager" type="Node2D"]
+script = ExtResource("1_ccncl")
+Game_Scenes = [null, null]
+
+[node name="CurrentScene" type="Node" parent="."]
+
+[node name="TransitionScreen" parent="." instance=ExtResource("1_8508n")]
+
+[node name="PauseMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
