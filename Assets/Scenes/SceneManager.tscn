@@ -5,7 +5,7 @@
 
 [node name="SceneManager" type="Node2D"]
 script = ExtResource("1_ccncl")
-Game_Scenes = [null, null]
+Game_Scenes = Array[PackedScene]([null, null])
 
 [node name="CurrentScene" type="Node" parent="."]
 
@@ -16,3 +16,5 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="ButtonSFX" type="AudioStreamPlayer2D" parent="."]

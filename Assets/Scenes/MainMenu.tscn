@@ -1,4 +1,12 @@
-[gd_scene format=3 uid="uid://c2wq025g6hkdx"]
+[gd_scene load_steps=8 format=3 uid="uid://c2wq025g6hkdx"]
+
+[ext_resource type="Texture2D" uid="uid://c1mfgknnegdhm" path="res://icon.svg" id="1_0rm4p"]
+[ext_resource type="Theme" uid="uid://by6fgbsw0a1g3" path="res://Assets/UI/UI_General.tres" id="1_hg533"]
+[ext_resource type="Texture2D" uid="uid://dyhaqh723vgtc" path="res://Assets/Art/MainMenu/logo-malagajam.png" id="2_bdvi4"]
+[ext_resource type="Script" path="res://Assets/Scripts/MainMenu.gd" id="2_l4j0y"]
+[ext_resource type="Theme" uid="uid://di5ar5q2wit0o" path="res://Assets/UI/ImgButton.tres" id="3_f5e7c"]
+[ext_resource type="Texture2D" uid="uid://cljdp6y8gw51" path="res://Assets/Art/MainMenu/IconTwitter.png" id="3_pd52o"]
+[ext_resource type="Texture2D" uid="uid://cbko12ndwjsb" path="res://Assets/Art/MainMenu/FreeStylers_Logo.png" id="3_sv3cv"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,25 +15,98 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_hg533")
+script = ExtResource("2_l4j0y")
 
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ButtonContainer" type="VBoxContainer" parent="Background"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_0rm4p")
 
-[node name="Play" type="Button" parent="Background/ButtonContainer"]
+[node name="ButtonContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.266667
+anchor_right = 0.747396
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_hg533")
+theme_override_constants/separation = 32
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GameLogo" type="TextureRect" parent="CanvasLayer/ButtonContainer"]
+custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_0rm4p")
 
-[node name="HowToPlay" type="Button" parent="Background/ButtonContainer"]
+[node name="Play" type="Button" parent="CanvasLayer/ButtonContainer"]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+text = "MM_Play"
 
-[node name="Credits" type="Button" parent="Background/ButtonContainer"]
+[node name="HowToPlay" type="Button" parent="CanvasLayer/ButtonContainer"]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+text = "MM_HowToPlay"
 
-[node name="Quit" type="Button" parent="Background/ButtonContainer"]
+[node name="Credits" type="Button" parent="CanvasLayer/ButtonContainer"]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+text = "MM_Credits"
+
+[node name="Quit" type="Button" parent="CanvasLayer/ButtonContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "MM_Quit"
+
+[node name="ExtraButtonsLeft" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.0166667
+anchor_top = 0.714815
+anchor_right = 0.266667
+anchor_bottom = 1.0
+grow_vertical = 0
+theme = ExtResource("3_f5e7c")
+theme_override_constants/separation = 32
+
+[node name="FreeStylers" type="Button" parent="CanvasLayer/ExtraButtonsLeft"]
+layout_mode = 2
+icon = ExtResource("3_sv3cv")
+
+[node name="Twitter" type="Button" parent="CanvasLayer/ExtraButtonsLeft"]
+layout_mode = 2
+icon = ExtResource("3_pd52o")
+
+[node name="ExtraButtonsRight" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 1.46667
+anchor_top = 1.48519
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1381.0
+offset_top = -758.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_f5e7c")
+alignment = 1
+
+[node name="Jam" type="Button" parent="CanvasLayer/ExtraButtonsRight"]
+layout_mode = 2
+icon = ExtResource("2_bdvi4")
+
+[connection signal="pressed" from="CanvasLayer/ExtraButtonsLeft/FreeStylers" to="." method="FreeStylers"]
+[connection signal="pressed" from="CanvasLayer/ExtraButtonsLeft/Twitter" to="." method="Twitter"]
+[connection signal="pressed" from="CanvasLayer/ExtraButtonsRight/Jam" to="." method="Jam"]

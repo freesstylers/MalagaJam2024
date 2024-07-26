@@ -31,3 +31,6 @@ func fade_in_():
 
 func fade_out():
 	pass
+
+func playButtonSFX():
+	pass
