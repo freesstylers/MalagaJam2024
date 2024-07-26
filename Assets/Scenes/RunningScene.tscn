@@ -1,3 +1,13 @@
-[gd_scene format=3 uid="uid://d1oj3gb3b56hi"]
+[gd_scene load_steps=2 format=3 uid="uid://dw2qv5x8fo8iq"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/RunManager.gd" id="1_3vxij"]
 
 [node name="RunningScene" type="Node3D"]
+
+[node name="RunManager" type="Node3D" parent="."]
+script = ExtResource("1_3vxij")
+
+[node name="HitTimer" type="Timer" parent="RunManager"]
+one_shot = true
+
+[connection signal="timeout" from="RunManager/HitTimer" to="RunManager" method="on_hit_timer_ended"]
