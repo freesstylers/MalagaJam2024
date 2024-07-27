@@ -1,6 +1,8 @@
 class_name RunManager
 extends Node
 
+@onready var hitSounds : AudioStreamPlayer = $AudioStreamPlayer
+
 @export var road_manager : RoadManager = null
 @export var obstacle_spawn_manager : ObstaclesSpawnManager = null
 @export var scenary_visuals : ScenaryVisualizer = null
@@ -77,6 +79,8 @@ func on_obstacle_hit(vel_reduction):
 	player_hit_timer.start()
 	var local_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
 	local_tween.tween_property(self, "player_velocity",player_velocity - vel_reduction,  0.1)
+	
+	hitSounds.play()
 		
 func on_hit_timer_ended():
 	player_is_stunned = false
