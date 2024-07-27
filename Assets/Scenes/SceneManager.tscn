@@ -23,3 +23,12 @@ offset_bottom = 40.0
 
 [node name="FreeStylersSplash" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_j4gfk")
+
+[node name="GodotSplash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_j4gfk")
+
+[node name="DisclaimerSplash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_j4gfk")
+
+[connection signal="finished" from="FreeStylersSplash" to="." method="_on_free_stylers_splash_finished"]
+[connection signal="finished" from="GodotSplash" to="." method="_on_godot_splash_finished"]

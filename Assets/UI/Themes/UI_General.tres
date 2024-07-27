@@ -1,4 +1,6 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://by6fgbsw0a1g3"]
+[gd_resource type="Theme" load_steps=11 format=3 uid="uid://by6fgbsw0a1g3"]
+
+[ext_resource type="FontFile" uid="uid://ccag7totcpphf" path="res://Assets/UI/Fonts/Retro Gaming.ttf" id="1_6uxix"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1p0n3"]
 bg_color = Color(0.27451, 0.682353, 0.592157, 1)
@@ -142,7 +144,7 @@ Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 32
-Button/fonts/font = null
+Button/fonts/font = ExtResource("1_6uxix")
 Button/styles/focus = SubResource("StyleBoxFlat_1p0n3")
 Button/styles/hover = SubResource("StyleBoxFlat_5u8pu")
 Button/styles/normal = SubResource("StyleBoxFlat_2a60k")
@@ -154,4 +156,5 @@ OptionButton/styles/normal = SubResource("StyleBoxFlat_tqdtl")
 OptionButton/styles/pressed = SubResource("StyleBoxFlat_3o6y4")
 Panel/styles/panel = SubResource("StyleBoxFlat_558sw")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_fguge")
-RichTextLabel/fonts/normal_font = null
+RichTextLabel/font_sizes/normal_font_size = 32
+RichTextLabel/fonts/normal_font = ExtResource("1_6uxix")

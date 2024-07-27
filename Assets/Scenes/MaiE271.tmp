@@ -115,82 +115,6 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 icon = ExtResource("2_bdvi4")
 
-[node name="Credits" type="Panel" parent="CanvasLayer"]
-visible = false
-anchors_preset = -1
-anchor_left = 0.279167
-anchor_top = 0.101852
-anchor_right = 0.720833
-anchor_bottom = 0.898148
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme = ExtResource("1_hg533")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="RichTextLabel" parent="CanvasLayer/Credits"]
-layout_mode = 0
-offset_left = 45.0
-offset_top = 50.0
-offset_right = 801.0
-offset_bottom = 736.0
-theme = ExtResource("1_hg533")
-bbcode_enabled = true
-text = "[center][font_size={64}]Créditos[/font_size]
------
-
-Gonzalo Cidoncha - El Enemigo
-David Czepiel - El Obstáculo
-Ignacio Ory - El Mago
-Jose Martín - El Frisbee
-Pablo Grossi - El Gorro de Hablar
-Adán Sánchez - El Mojitos"
-
-[node name="CreditsClose" type="Button" parent="CanvasLayer/Credits"]
-layout_mode = 0
-offset_left = 228.0
-offset_top = 706.0
-offset_right = 607.0
-offset_bottom = 821.0
-text = "¡Vuelta al tajo!"
-
-[node name="HowToPlay" type="Panel" parent="CanvasLayer"]
-visible = false
-anchors_preset = -1
-anchor_left = 0.279167
-anchor_top = 0.101852
-anchor_right = 0.720833
-anchor_bottom = 0.898148
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme = ExtResource("1_hg533")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="RichTextLabel" parent="CanvasLayer/HowToPlay"]
-layout_mode = 0
-offset_left = 45.0
-offset_top = 50.0
-offset_right = 801.0
-offset_bottom = 736.0
-theme = ExtResource("1_hg533")
-bbcode_enabled = true
-text = "[center][font_size={64}]Cómo tirar cañas[/font_size]
------
-
-1) En el bar, bebe (clicka) tanto como quieras para fijar tu propio reto
-
-2) En la calle, haz que Sisebuto esquive todo lo que puedas usando las teclas A/Flecha Izquierda y 
-D/Flecha Derecha"
-
-[node name="HowToPlayClose" type="Button" parent="CanvasLayer/HowToPlay"]
-layout_mode = 0
-offset_left = 228.0
-offset_top = 706.0
-offset_right = 607.0
-offset_bottom = 821.0
-text = "¡Vuelta al tajo!"
-
 [connection signal="pressed" from="CanvasLayer/ButtonContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/ButtonContainer/HowToPlay" to="." method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/ButtonContainer/Credits" to="." method="_on_credits_pressed"]
@@ -198,5 +122,3 @@ text = "¡Vuelta al tajo!"
 [connection signal="pressed" from="CanvasLayer/ExtraButtonsLeft/FreeStylers" to="." method="FreeStylers"]
 [connection signal="pressed" from="CanvasLayer/ExtraButtonsLeft/Twitter" to="." method="Twitter"]
 [connection signal="pressed" from="CanvasLayer/ExtraButtonsRight/Jam" to="." method="Jam"]
-[connection signal="pressed" from="CanvasLayer/Credits/CreditsClose" to="." method="_on_credits_close_pressed"]
-[connection signal="pressed" from="CanvasLayer/HowToPlay/HowToPlayClose" to="." method="_on_how_to_play_close_pressed"]

@@ -52,3 +52,13 @@ func findComponentInChildren(parent, type):
 		if grandchild != null:
 			return grandchild
 	return null
+
+
+func _on_free_stylers_splash_finished():
+	$GodotSplash.play()
+	pass # Replace with function body.
+
+
+func _on_godot_splash_finished():
+	$DisclaimerSplash.play()
+	pass # Replace with function body.
