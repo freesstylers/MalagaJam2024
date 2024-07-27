@@ -15,8 +15,8 @@ extends Node3D
 
 var player_vel : float = 0
 
-#func _exit_tree():
-	#Globals.obstacle_avoided.emit(Points_When_Evaded)
+func _exit_tree():
+	Globals.obstacle_avoided.emit()
 
 func on_body_entered(other_body):
 	if other_body.is_in_group("PLAYER"):

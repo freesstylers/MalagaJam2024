@@ -14,6 +14,6 @@ signal get_ready_to_run(drunk_meter)
 signal start_running()
 signal obstacle_hit(vel_reduction)
 signal obstacle_spawned(obstacle)
-signal obstacle_avoided(points_won)
+signal obstacle_avoided()
 signal player_lost()
 

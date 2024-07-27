@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bkurnpku3pp5i"]
+[gd_scene load_steps=28 format=3 uid="uid://bkurnpku3pp5i"]
 
 [ext_resource type="PackedScene" uid="uid://cudlslr7a78d3" path="res://Assets/Scenes/GameScene/escenario.tscn" id="1_sxt48"]
 [ext_resource type="Shader" path="res://Assets/Shaders/Scenery/Drunk.gdshader" id="2_4t3tn"]
@@ -16,8 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://ccw2150gfgt2m" path="res://Assets/Scenes/Character/MainChar.tscn" id="7_yvq0n"]
 [ext_resource type="PackedScene" uid="uid://cd62nw1l8bby" path="res://Assets/Scenes/GameScene/camera_3d.tscn" id="8_a6tfl"]
 [ext_resource type="PackedScene" uid="uid://d3rbtmu3pxuph" path="res://Assets/Prefabs/ObstaclePogzalo.tscn" id="8_q7m0o"]
-[ext_resource type="PackedScene" uid="uid://dx0knpycq5mkc" path="res://Assets/Prefabs/ObstaclePOPO.tscn" id="9_c3fyx"]
+[ext_resource type="PackedScene" path="res://Assets/Prefabs/ObstaclePOPO.tscn" id="9_c3fyx"]
 [ext_resource type="PackedScene" uid="uid://c0xy85yai5vig" path="res://Assets/Prefabs/ObstacleCow.tscn" id="9_m7cgd"]
+[ext_resource type="AudioStream" uid="uid://ciuc87wmjpd16" path="res://Assets/Sound/SFX/InGame/Dodge/blow.ogg" id="9_w44go"]
 [ext_resource type="AudioStream" uid="uid://b4uuom3ov8n1m" path="res://Assets/Sound/SFX/InGame/Crashes/Slip & Fall 2.wav" id="9_we6hg"]
 [ext_resource type="PackedScene" uid="uid://b277v2uoa80f3" path="res://Assets/Prefabs/ObstacleChinese.tscn" id="10_4pvwj"]
 [ext_resource type="PackedScene" path="res://Assets/Prefabs/ObstacleAlien.tscn" id="10_d5xwn"]
@@ -65,9 +66,13 @@ main_char = NodePath("../CharacterBody3D")
 [node name="HitTimer" type="Timer" parent="RunManager"]
 one_shot = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="RunManager"]
+[node name="CrashSounds" type="AudioStreamPlayer" parent="RunManager"]
 stream = SubResource("AudioStreamRandomizer_u2svq")
 volume_db = -5.0
+
+[node name="DodgeSound" type="AudioStreamPlayer" parent="RunManager"]
+stream = ExtResource("9_w44go")
+volume_db = -10.0
 
 [node name="Road" type="Path3D" parent="."]
 curve = SubResource("Curve3D_vbbg1")

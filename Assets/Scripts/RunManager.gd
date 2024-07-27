@@ -1,7 +1,8 @@
 class_name RunManager
 extends Node
 
-@onready var hitSounds : AudioStreamPlayer = $AudioStreamPlayer
+@onready var hitSounds : AudioStreamPlayer = $CrashSounds
+@onready var dodgeSound : AudioStreamPlayer = $DodgeSound
 
 @export var road_manager : RoadManager = null
 @export var obstacle_spawn_manager : ObstaclesSpawnManager = null
@@ -64,10 +65,8 @@ func on_get_ready_to_run(drunk_meter):
 	
 	road_manager.clear_obstacles()
 
-func on_obstacle_avoided(points_won):
-	player_points = player_points + points_won + points_won * drunk_percentage
-	#ui_manager.VisualFeedback()
-	#player_visualizer.VisualFeedBack()
+func on_obstacle_avoided():
+	dodgeSound.play()
 
 func on_obstacle_hit(vel_reduction):
 	player_is_stunned = true
