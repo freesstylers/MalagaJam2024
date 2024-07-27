@@ -1,13 +1,45 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw2qv5x8fo8iq"]
+[gd_scene load_steps=7 format=3 uid="uid://dw2qv5x8fo8iq"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/RunManager.gd" id="1_3vxij"]
+[ext_resource type="Script" path="res://Assets/Scripts/RoadManager.gd" id="2_8l8ep"]
+[ext_resource type="Texture2D" uid="uid://dyhaqh723vgtc" path="res://Assets/Art/MainMenu/logo-malagajam.png" id="3_267sy"]
+[ext_resource type="PackedScene" uid="uid://c8up7sntu1403" path="res://Assets/Prefabs/Obstacle.tscn" id="3_hh2nq"]
+[ext_resource type="Script" path="res://Assets/Scripts/ObstaclesSpawnManager.gd" id="4_l2e2g"]
+
+[sub_resource type="Curve3D" id="Curve3D_2e541"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.019013, -0.00434065, 0.0208702, 0, 0, 0, 0, 0, 0, 0.277092, 0.867433, -3.84246, 0, 0, 0, 0, 0, 0, 0.598516, 2.29298, -6.55935),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
 
 [node name="RunningScene" type="Node3D"]
 
-[node name="RunManager" type="Node3D" parent="."]
+[node name="RunManager" type="Node3D" parent="." node_paths=PackedStringArray("road_manager", "obstacle_spawn_manager")]
 script = ExtResource("1_3vxij")
+road_manager = NodePath("../Road")
+obstacle_spawn_manager = NodePath("../ObstaclesSpawner")
 
 [node name="HitTimer" type="Timer" parent="RunManager"]
 one_shot = true
+
+[node name="ObstaclesSpawner" type="Node3D" parent="."]
+script = ExtResource("4_l2e2g")
+ObstaclePrefab = ExtResource("3_hh2nq")
+
+[node name="Road" type="Path3D" parent="." node_paths=PackedStringArray("RoadObjects")]
+curve = SubResource("Curve3D_2e541")
+script = ExtResource("2_8l8ep")
+RoadObjects = [NodePath("PathFollow3D")]
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Road"]
+transform = Transform3D(0.997075, -0.0167748, -0.074557, 0, 0.97561, -0.219506, 0.0764208, 0.218864, 0.972757, -0.019013, -0.00434065, 0.0208702)
+
+[node name="Sprite3D" type="Sprite3D" parent="Road/PathFollow3D"]
+transform = Transform3D(0.576042, 0, 0.81742, 0.273345, 0.942432, -0.192628, -0.770363, 0.334399, 0.54288, -0.00610743, 0.0133081, -0.0245255)
+texture = ExtResource("3_267sy")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.91893)
 
 [connection signal="timeout" from="RunManager/HitTimer" to="RunManager" method="on_hit_timer_ended"]

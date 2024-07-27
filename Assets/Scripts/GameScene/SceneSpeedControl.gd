@@ -1,3 +1,4 @@
+class_name ScenaryVisualizer
 extends Node3D
 
 var velocity:float

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8up7sntu1403"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/Obstacle.gd" id="1_eidqs"]
+[ext_resource type="Texture2D" uid="uid://bgqeb1ewwclps" path="res://Assets/Art/MainMenu/FreeStylersLogo.svg" id="1_s8e1h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qwo7k"]
+size = Vector3(3, 3, 1)
+
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("Moving_Thing")]
+script = ExtResource("1_eidqs")
+Moving_Thing = NodePath("Sprite3D")
+Dest_pos = Vector3(0, 2, 0)
+Movement_Delay = 2.0
+Loop_Back = true
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
+texture = ExtResource("1_s8e1h")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_qwo7k")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.73485)
+
+[connection signal="body_entered" from="Area3D" to="." method="on_body_entered"]
