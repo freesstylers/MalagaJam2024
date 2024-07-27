@@ -1,8 +1,8 @@
 class_name Obstacle
 extends Node3D
 
-@export var Moving_Thing : Node3D = self
-@export var Moving_Thing_Shadow : Node3D = self
+@export var Moving_Thing : Sprite3D = null
+@export var Moving_Thing_Shadow : Sprite3D = null
 
 @export var Min_Vel_Reduction : float = 100
 @export var Max_Vel_Reduction : float = 100
@@ -14,6 +14,13 @@ extends Node3D
 @export var Movement_Duration : float = 1.0
 
 var player_vel : float = 0
+
+func _ready():
+	Moving_Thing.modulate.a = 0
+	Moving_Thing_Shadow.modulate.a = 0
+	var local_tween = create_tween().set_parallel(true) 
+	local_tween.tween_property(Moving_Thing,"modulate:a", 1 , 0.2)
+	local_tween.tween_property(Moving_Thing_Shadow,"modulate:a", 1 , 0.2)
 
 func _exit_tree():
 	Globals.obstacle_avoided.emit()
