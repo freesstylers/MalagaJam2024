@@ -13,12 +13,17 @@ extends Node
 var meters_till_next_obstacle : float = 0
 var meters_per_obstacle : float = 300
 
+var game_lost : bool = false
+
 enum ObstacleType { ONE_SLOT_STATIC = 0, TWO_SLOT_STATIC, ONE_SLOT_MOVING, ONE_STATIC_ONE_MOVE, TWO_SLOT_MOVE, OBSTACLE_TYPE_MAX }
 
 func _ready():
 	Globals.get_ready_to_run.connect(on_get_ready_to_run)
+	Globals.player_lost.connect(on_game_lost)
 
 func PlayerIsRunning(player_velocity):
+	if game_lost:
+		return
 	meters_till_next_obstacle  = meters_till_next_obstacle - player_velocity
 	if meters_till_next_obstacle < 0:
 		SpawnObstacleScreen()	
@@ -98,6 +103,7 @@ func SpawnObstacleScreen():
 
 func on_get_ready_to_run():
 	meters_till_next_obstacle = meters_per_obstacle
+	game_lost = false
 
 func random_pos_index_to_vector(index):
 	match index:
@@ -113,3 +119,6 @@ func instantiate_an_obstacle(obstacles_array):
 	var new_obstacle = obstacles_array[random_obstacle_index].instantiate() as Obstacle
 	Globals.obstacle_spawned.emit(new_obstacle)
 	return new_obstacle
+	
+func on_game_lost():
+	game_lost = true
