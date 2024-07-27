@@ -3,7 +3,6 @@ extends Node3D
 
 @export var Moving_Thing : Node3D = self
 @export var Moving_Thing_Shadow : Node3D = self
-@export var Points_When_Evaded : int = 50
 
 @export var Min_Vel_Reduction : float = 100
 @export var Max_Vel_Reduction : float = 100
@@ -16,8 +15,8 @@ extends Node3D
 
 var player_vel : float = 0
 
-func _exit_tree():
-	Globals.obstacle_avoided.emit(Points_When_Evaded)
+#func _exit_tree():
+	#Globals.obstacle_avoided.emit(Points_When_Evaded)
 
 func on_body_entered(other_body):
 	if other_body.is_in_group("PLAYER"):

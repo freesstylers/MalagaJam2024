@@ -5,12 +5,13 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Character/LookAtCamera.gd" id="3_xehvb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qwo7k"]
-size = Vector3(0.312059, 0.257256, 0.0453491)
+size = Vector3(0.364966, 0.257256, 0.0453491)
 
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("Moving_Thing", "Moving_Thing_Shadow")]
 script = ExtResource("1_qtcjd")
 Moving_Thing = NodePath("Sprite3D")
 Moving_Thing_Shadow = NodePath("Shadow")
+Max_Vel_Reduction = 150.0
 Movement_Delay = 2.0
 
 [node name="Shadow" type="Sprite3D" parent="."]
@@ -34,7 +35,7 @@ script = ExtResource("3_xehvb")
 transform = Transform3D(2.85714, 0, 0, 0, 2.85714, 0, 0, 0, 2.85714, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0994591, 0.130764, -0.0052185)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0062343, 0.130764, -0.0052185)
 shape = SubResource("BoxShape3D_qwo7k")
 
 [connection signal="body_entered" from="Sprite3D/Area3D" to="." method="on_body_entered"]
