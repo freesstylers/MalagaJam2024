@@ -2,11 +2,15 @@ class_name MainChar
 extends CharacterBody3D
 
 @export var maxSpeed = 14.0
-@export var acceleration : float = 1.0
+@export var minAcceleration : float = 1.0
+@export var maxAcceleration : float = 2.0
+var acceleration : float = 1.5
 
 # Variable que controla cuanto tarda en cambiar de dirección
 # -1 para full borracho, -20 para full ebrio
-@export var drift : float = -20.0
+@export var minDrift : float = -1.0
+@export var maxDrift : float = -20.0
+var drift : float = -5.0
 
 @export var limits : float = 5.0
 
@@ -14,6 +18,13 @@ var speed = 0.0
 var target_velocity = Vector3.ZERO
 var direction : Vector3 = Vector3.ZERO
 var changingDir : bool = false
+	
+func _ready():
+	Globals.get_ready_to_run.connect(on_get_ready_to_run)
+	
+func on_get_ready_to_run(drunk_meter):
+	acceleration = minAcceleration + (maxAcceleration-minAcceleration)*drunk_meter
+	drift = maxDrift + (minDrift-maxDrift)*drunk_meter
 	
 func _physics_process(delta):
 	var isMoving = 0

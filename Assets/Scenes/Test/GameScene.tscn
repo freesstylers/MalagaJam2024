@@ -76,7 +76,5 @@ omni_range = 42.1848
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("7_yvq0n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.181)
-acceleration = 5.0
-drift = -100.0
 
 [connection signal="timeout" from="RunManager/HitTimer" to="RunManager" method="on_hit_timer_ended"]
