@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bis83phpwwfgb"]
+
+[ext_resource type="Script" path="res://addons/awesome_splash/core/SplashContainer.gd" id="1_idwwl"]
+[ext_resource type="PackedScene" uid="uid://c2wq025g6hkdx" path="res://Assets/Scenes/MainMenu.tscn" id="2_hodti"]
+[ext_resource type="PackedScene" uid="uid://bvp1p5sxea7hc" path="res://Assets/UI/Splash/demo_collection/twist/splash_screen.tscn" id="2_r10xl"]
+[ext_resource type="PackedScene" uid="uid://c1a6h17cr3guq" path="res://Assets/UI/Splash/demo_collection/fire/splash_screen.tscn" id="4_mdce3"]
+
+[node name="SplashContainer" type="Node2D"]
+script = ExtResource("1_idwwl")
+move_to_scene = ExtResource("2_hodti")
+
+[node name="SplashFire" parent="." instance=ExtResource("4_mdce3")]
+logo_path = "res://Assets/Art/MainMenu/FreeStylers_Logo_Splash.png"
+title = ""
+
+[node name="SplashTwist" parent="." instance=ExtResource("2_r10xl")]
+logo_path = "res://Assets/UI/Splash/demo_collection/twist/src/logo.png"

@@ -7,7 +7,8 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Globals.SceneMngr = self
-
+	load_scene(0)
+	
 var currentLevel = -1
 
 func startGame(level: int):
@@ -20,11 +21,19 @@ func _on_transition_screen_screen_transitioned(currentLevel):
 			pass
 
 func get_current_scene_node():
+	return get_child(0)
 	pass
 
-func load_scene(name):
-	var current = get_current_scene_node()
-	current.queue_free()
+func load_scene(number : int):
+	var current = get_current_scene_node().get_child(0) #CurrentScene
+	
+	if current != null:
+		current.queue_free()
+	
+	match (number):
+		Globals.Scene.SPLASH_SCREEN:
+			get_child(0).add_child(Game_Scenes[number].instantiate())
+			$FreeStylersSplash.play()
 	
 func fade_in_():
 	pass

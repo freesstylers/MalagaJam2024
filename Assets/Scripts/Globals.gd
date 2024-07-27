@@ -1,7 +1,7 @@
 extends Node
 
 var SceneMngr : SceneManager = null 
-enum Scene {MAIN_SCENE, PLAY_SCENE, OTHER_SCENE}
+enum Scene {SPLASH_SCREEN, MAIN_SCENE, PLAY_SCENE, OTHER_SCENE}
 
 #CONSTANTS
 const MIN_RUNNING_VEL = 100

@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://qdiguxhfnsv8"]
+[gd_scene load_steps=5 format=3 uid="uid://qdiguxhfnsv8"]
 
 [ext_resource type="PackedScene" uid="uid://c6kwux5euwagh" path="res://Assets/Prefabs/Transition.tscn" id="1_8508n"]
 [ext_resource type="Script" path="res://Assets/Scripts/GlobalManager.gd" id="1_ccncl"]
+[ext_resource type="PackedScene" uid="uid://bis83phpwwfgb" path="res://Assets/Prefabs/splash_screen.tscn" id="2_i8h7e"]
+[ext_resource type="AudioStream" uid="uid://brwr15h3advxm" path="res://Assets/Sound/FreeStylersSplashSound.mp3" id="3_j4gfk"]
 
 [node name="SceneManager" type="Node2D"]
 script = ExtResource("1_ccncl")
-Game_Scenes = Array[PackedScene]([null, null])
+Game_Scenes = Array[PackedScene]([ExtResource("2_i8h7e"), null])
 
 [node name="CurrentScene" type="Node" parent="."]
 
@@ -18,3 +20,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ButtonSFX" type="AudioStreamPlayer2D" parent="."]
+
+[node name="FreeStylersSplash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_j4gfk")

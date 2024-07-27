@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkurnpku3pp5i"]
+[gd_scene load_steps=3 format=3 uid="uid://bkurnpku3pp5i"]
 
 [ext_resource type="PackedScene" uid="uid://cudlslr7a78d3" path="res://Assets/Scenes/GameScene/escenario.tscn" id="1_sxt48"]
+[ext_resource type="PackedScene" uid="uid://1nvdap51vw02" path="res://Assets/Prefabs/InGameUI.tscn" id="2_xo5ro"]
 
 [node name="GameScene" type="Node3D"]
 
@@ -15,3 +16,5 @@ keep_aspect = 0
 fov = 110.0
 
 [node name="Escenario" parent="." instance=ExtResource("1_sxt48")]
+
+[node name="Control" parent="." instance=ExtResource("2_xo5ro")]
