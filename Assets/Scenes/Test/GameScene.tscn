@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bkurnpku3pp5i"]
+[gd_scene load_steps=19 format=3 uid="uid://bkurnpku3pp5i"]
 
 [ext_resource type="PackedScene" uid="uid://cudlslr7a78d3" path="res://Assets/Scenes/GameScene/escenario.tscn" id="1_sxt48"]
 [ext_resource type="Shader" path="res://Assets/Shaders/Scenery/Drunk.gdshader" id="2_4t3tn"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://d3rbtmu3pxuph" path="res://Assets/Prefabs/ObstaclePogzalo.tscn" id="8_q7m0o"]
 [ext_resource type="PackedScene" uid="uid://c0xy85yai5vig" path="res://Assets/Prefabs/ObstacleCow.tscn" id="9_m7cgd"]
 [ext_resource type="PackedScene" uid="uid://b277v2uoa80f3" path="res://Assets/Prefabs/ObstacleChinese.tscn" id="10_4pvwj"]
+[ext_resource type="PackedScene" uid="uid://cg0jdw0gff70x" path="res://Assets/Prefabs/ObstacleAlien.tscn" id="10_d5xwn"]
 [ext_resource type="PackedScene" uid="uid://che8xov8mskne" path="res://Assets/Prefabs/ObstacleCat.tscn" id="11_8vdt4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_86u0v"]
@@ -54,7 +55,7 @@ CentralPositionNode = NodePath("CentralSpawn")
 RightPositionNode = NodePath("RightSpawn")
 LeftPositionNode = NodePath("LeftSpawn")
 One_Slot_Static_Prefabs = Array[PackedScene]([ExtResource("5_iggs0"), ExtResource("7_k8fks"), ExtResource("8_q7m0o")])
-Two_Slot_Static_Prefabs = Array[PackedScene]([ExtResource("9_m7cgd")])
+Two_Slot_Static_Prefabs = Array[PackedScene]([ExtResource("9_m7cgd"), ExtResource("10_d5xwn")])
 One_Slot_Moving_Prefabs = Array[PackedScene]([ExtResource("10_4pvwj"), ExtResource("11_8vdt4"), ExtResource("7_okymv")])
 Two_Slot_Moving_Prefabs = Array[PackedScene]([ExtResource("9_m7cgd")])
 

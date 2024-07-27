@@ -21,6 +21,7 @@ var speed = 0.0
 var target_velocity = Vector3.ZERO
 var direction : Vector3 = Vector3.ZERO
 var changingDir : bool = false
+var player_velocity : float = 0
 	
 func _ready():
 	Globals.get_ready_to_run.connect(on_get_ready_to_run)
@@ -29,6 +30,7 @@ func _ready():
 func on_get_ready_to_run(drunk_meter):
 	acceleration = minAcceleration + (maxAcceleration-minAcceleration)*drunk_meter
 	drift = maxDrift + (minDrift-maxDrift)*drunk_meter
+	player_velocity = 0
 	
 func _physics_process(delta):
 	var isMoving = 0
@@ -73,3 +75,4 @@ func _physics_process(delta):
 		
 func set_animation_speed(real_speed):
 	animation.speed_scale = 0.25 + 0.75*(real_speed/(Globals.MAX_RUNNING_VEL-Globals.MIN_RUNNING_VEL))
+	player_velocity = real_speed

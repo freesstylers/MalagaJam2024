@@ -4,7 +4,9 @@ extends Node3D
 @export var Moving_Thing : Node3D = self
 @export var Moving_Thing_Shadow : Node3D = self
 @export var Points_When_Evaded : int = 50
-@export var Vel_Reduction : float = 100
+
+@export var Min_Vel_Reduction : float = 100
+@export var Max_Vel_Reduction : float = 100
 
 @export var Spawn_Pos : Vector3 = Vector3.ZERO
 @export var Dest_pos : Vector3 = Vector3.ZERO
@@ -12,12 +14,16 @@ extends Node3D
 @export var Loop_Back : bool = true
 @export var Movement_Duration : float = 1.0
 
+var player_vel : float = 0
+
 func _exit_tree():
 	Globals.obstacle_avoided.emit(Points_When_Evaded)
 
 func on_body_entered(other_body):
 	if other_body.is_in_group("PLAYER"):
-		Globals.obstacle_hit.emit(Vel_Reduction)
+		var vel_reduction_factor : float = (player_vel-Globals.MIN_RUNNING_VEL) / (Globals.MAX_RUNNING_VEL-Globals.MIN_RUNNING_VEL)
+		var vel_reduction : float = Min_Vel_Reduction + (vel_reduction_factor * (Max_Vel_Reduction-Min_Vel_Reduction))
+		Globals.obstacle_hit.emit(vel_reduction)
 
 func program_movement(s_pos = Vector3.ZERO, d_pos = Vector3.ZERO, duration = 1.0, delay = 0, loop = true):
 	Moving_Thing.position = s_pos
@@ -33,3 +39,6 @@ func program_movement(s_pos = Vector3.ZERO, d_pos = Vector3.ZERO, duration = 1.0
 		if Loop_Back:
 			program_movement(d_pos, s_pos, duration,delay, Loop_Back)
 		)
+
+func set_player_vel(vel):
+	player_vel = vel

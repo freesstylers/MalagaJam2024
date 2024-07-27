@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj3kqr4sbrc11"
-path.s3tc="res://.godot/imported/Alien.png-b6d776de8ff88016880614940bbfde5b.s3tc.ctex"
+uid="uid://d2wjeohrcvehk"
+path="res://.godot/imported/Speed_Bar.png-4217427b48daeeb79fef415f34760507.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Scenario/Obstaculos/Alien.png"
-dest_files=["res://.godot/imported/Alien.png-b6d776de8ff88016880614940bbfde5b.s3tc.ctex"]
+source_file="res://Assets/Art/UI/Speed_Bar.png"
+dest_files=["res://.godot/imported/Speed_Bar.png-4217427b48daeeb79fef415f34760507.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

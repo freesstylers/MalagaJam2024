@@ -11,7 +11,6 @@ size = Vector3(0.11184, 0.26754, 0.0453491)
 script = ExtResource("1_acbev")
 Moving_Thing = NodePath("Sprite3D")
 Moving_Thing_Shadow = NodePath("Shadow")
-Vel_Reduction = 50.0
 Movement_Delay = 2.0
 
 [node name="Shadow" type="Sprite3D" parent="."]
