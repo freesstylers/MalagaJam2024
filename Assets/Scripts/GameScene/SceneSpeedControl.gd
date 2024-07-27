@@ -1,27 +1,49 @@
 extends Node3D
 
-@export var velocity:float
-
+var velocity:float
 var m:float
-var children : Array[Node]
+var children : Array[ShaderMaterial]
+var localTime : float = 0.0
+var offset : float = 0.0
+var menos:float  = 0.0
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	children = get_children()
-	m = 100.0
-	pass # Replace with function body.
+	for c in get_children():
+		var meshMat = c as MeshInstance3D
+		children.push_back(meshMat.get_surface_override_material(0))
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_key_pressed(KEY_SPACE):
-		set_velocity(m)
-		m += 10
-	pass
+	#Seteamos nosotros el calculo del offset entero
+	localTime += delta
+	
+	offset = (localTime/60.0 * velocity) 
+	offset =  offset - floor(offset) - menos #Offset entre 0 y 1
+	
+	set_offset_to_shaders(offset)
+	
+	if OS.is_debug_build():
+		test_vel()
+		
+func test_vel():
+	if Input.is_key_pressed(KEY_1):
+		set_velocity(10)
+			
+	if Input.is_key_pressed(KEY_2):
+		set_velocity(50)
+			
+	if Input.is_key_pressed(KEY_3):
+		set_velocity(100)
+
+func set_offset_to_shaders(offset:float):
+	for c in children:
+		c.set_shader_parameter("offset", offset)
 
 #Seteamos la velocidad que va a tener todo el escenario
-#TODO: cambiar el parametro del shader por codigo del material_override
 func set_velocity(vel:float):
-	for c in children:
-		var mesh = c as MeshInstance3D
-		mesh.set_instance_shader_parameter("multiply", vel)
+	velocity = vel
+	
+	#Calculo del siguiente offset para ajustar y que no haga salto
+	var fakeoffset = localTime/60.0 * velocity
+	fakeoffset =  fakeoffset - floor(fakeoffset) #Offset entre 0 y 1
+	menos = abs(fakeoffset - offset)
