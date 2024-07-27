@@ -13,6 +13,7 @@ Moving_Thing = NodePath("Sprite3D")
 Moving_Thing_Shadow = NodePath("Shadow")
 Min_Vel_Reduction = 70.0
 Max_Vel_Reduction = 120.0
+Movement_duration = 1.5
 Movement_Delay = 2.0
 
 [node name="Shadow" type="Sprite3D" parent="."]

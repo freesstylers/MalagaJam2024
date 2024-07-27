@@ -7,6 +7,8 @@ extends Node3D
 @export var Min_Vel_Reduction : float = 100
 @export var Max_Vel_Reduction : float = 100
 
+@export var Movement_duration : float = 1
+
 @export var Spawn_Pos : Vector3 = Vector3.ZERO
 @export var Dest_pos : Vector3 = Vector3.ZERO
 @export var Movement_Delay : float = 0
@@ -31,7 +33,7 @@ func on_body_entered(other_body):
 		var vel_reduction : float = Min_Vel_Reduction + (vel_reduction_factor * (Max_Vel_Reduction-Min_Vel_Reduction))
 		Globals.obstacle_hit.emit(vel_reduction)
 
-func program_movement(s_pos = Vector3.ZERO, d_pos = Vector3.ZERO, duration = 1.0, delay = 0, loop = true):
+func program_movement(s_pos = Vector3.ZERO, d_pos = Vector3.ZERO, delay = 0, loop = true):
 	Moving_Thing.position = s_pos
 	Moving_Thing_Shadow.position.x = s_pos.x
 	Loop_Back = loop 
@@ -39,11 +41,11 @@ func program_movement(s_pos = Vector3.ZERO, d_pos = Vector3.ZERO, duration = 1.0
 		return
 	var local_tween = Moving_Thing.create_tween()
 	local_tween.set_parallel(true)
-	local_tween.tween_property(Moving_Thing, "position", d_pos, duration).set_delay(delay)
-	local_tween.tween_property(Moving_Thing_Shadow, "position:x", d_pos.x, duration).set_delay(delay)
+	local_tween.tween_property(Moving_Thing, "position", d_pos, Movement_duration).set_delay(delay)
+	local_tween.tween_property(Moving_Thing_Shadow, "position:x", d_pos.x, Movement_duration).set_delay(delay)
 	local_tween.chain().tween_callback(func():
 		if Loop_Back:
-			program_movement(d_pos, s_pos, duration,delay, Loop_Back)
+			program_movement(d_pos, s_pos, delay, Loop_Back)
 		)
 
 func set_player_vel(vel):

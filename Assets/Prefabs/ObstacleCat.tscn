@@ -12,6 +12,7 @@ script = ExtResource("1_acbev")
 Moving_Thing = NodePath("Sprite3D")
 Moving_Thing_Shadow = NodePath("Shadow")
 Min_Vel_Reduction = 50.0
+Movement_duration = 0.75
 Movement_Delay = 2.0
 
 [node name="Shadow" type="Sprite3D" parent="."]
