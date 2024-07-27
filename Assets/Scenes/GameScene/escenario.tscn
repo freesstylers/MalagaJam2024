@@ -8,7 +8,7 @@
 [sub_resource type="PlaneMesh" id="PlaneMesh_711qq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lwa0d"]
-render_priority = 0
+render_priority = -1
 shader = ExtResource("2_eafyt")
 shader_parameter/dir = Vector2(-1, 0)
 shader_parameter/multiply = 10.0
@@ -19,7 +19,7 @@ shader_parameter/albedo_texture = ExtResource("3_rg7u8")
 [sub_resource type="PlaneMesh" id="PlaneMesh_8dy70"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xb2sp"]
-render_priority = 0
+render_priority = -1
 shader = ExtResource("2_eafyt")
 shader_parameter/dir = Vector2(1, 0)
 shader_parameter/multiply = 10.0
@@ -30,7 +30,7 @@ shader_parameter/albedo_texture = ExtResource("3_rg7u8")
 [sub_resource type="PlaneMesh" id="PlaneMesh_gnidm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nh6i0"]
-render_priority = 0
+render_priority = -1
 shader = ExtResource("2_eafyt")
 shader_parameter/dir = Vector2(0, -1)
 shader_parameter/multiply = 10.0
@@ -53,8 +53,26 @@ mesh = SubResource("PlaneMesh_8dy70")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("ShaderMaterial_xb2sp")
 
+[node name="CasasDerecha2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.74228e-07, -10, 4.37114e-07, 0, -4.37114e-07, -10, 20, -4.37114e-07, 1.91069e-14, 10, 10, -60)
+mesh = SubResource("PlaneMesh_711qq")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_lwa0d")
+
+[node name="CasasIzquierda2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.02679e-06, 10, -4.37114e-07, 0, -4.37114e-07, -10, -20, -4.01339e-06, 1.75431e-13, -10, 10, -60)
+mesh = SubResource("PlaneMesh_8dy70")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_xb2sp")
+
 [node name="Carretera" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, -20)
+mesh = SubResource("PlaneMesh_gnidm")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_nh6i0")
+
+[node name="Carretera2" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, -60)
 mesh = SubResource("PlaneMesh_gnidm")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("ShaderMaterial_nh6i0")

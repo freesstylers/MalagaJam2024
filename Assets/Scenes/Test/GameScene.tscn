@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkurnpku3pp5i"]
+[gd_scene load_steps=10 format=3 uid="uid://bkurnpku3pp5i"]
 
 [ext_resource type="PackedScene" uid="uid://cudlslr7a78d3" path="res://Assets/Scenes/GameScene/escenario.tscn" id="1_sxt48"]
 [ext_resource type="PackedScene" uid="uid://1nvdap51vw02" path="res://Assets/Prefabs/InGameUI.tscn" id="2_xo5ro"]
@@ -6,11 +6,12 @@
 [ext_resource type="Script" path="res://Assets/Scripts/ObstaclesSpawnManager.gd" id="4_0whah"]
 [ext_resource type="PackedScene" uid="uid://c8up7sntu1403" path="res://Assets/Prefabs/Obstacle.tscn" id="5_iggs0"]
 [ext_resource type="Script" path="res://Assets/Scripts/RoadManager.gd" id="6_4lv5d"]
+[ext_resource type="PackedScene" uid="uid://nm0qfmg83xtm" path="res://Assets/Prefabs/ObstacleCacahuete.tscn" id="7_okymv"]
 [ext_resource type="PackedScene" uid="uid://ccw2150gfgt2m" path="res://Assets/Scenes/Character/MainChar.tscn" id="7_yvq0n"]
 
 [sub_resource type="Curve3D" id="Curve3D_vbbg1"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 4, -40, 0, 0, 0, 0, 0, 0, -0.019, 4, 0.021),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 1, -40, 0, 0, 0, 0, 0, 0, -0.019, 1, 0.021),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -29,27 +30,33 @@ ui_manager = NodePath("../Control")
 [node name="HitTimer" type="Timer" parent="RunManager"]
 one_shot = true
 
-[node name="Escenario" parent="." instance=ExtResource("1_sxt48")]
-
 [node name="Road" type="Path3D" parent="."]
 curve = SubResource("Curve3D_vbbg1")
 script = ExtResource("6_4lv5d")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Road"]
+transform = Transform3D(-1, 0, 0.000474842, 0, 1, 0, -0.000474842, 0, -1, -0.0076665, 1, -23.8515)
+progress = 16.1485
+
+[node name="Node3D" parent="Road/PathFollow3D" instance=ExtResource("5_iggs0")]
 
 [node name="ObstaclesSpawner" type="Node3D" parent="." node_paths=PackedStringArray("CentralPositionNode", "RightPositionNode", "LeftPositionNode")]
 script = ExtResource("4_0whah")
 CentralPositionNode = NodePath("CentralSpawn")
 RightPositionNode = NodePath("RightSpawn")
 LeftPositionNode = NodePath("LeftSpawn")
-One_Slot_Static_Prefabs = Array[PackedScene]([ExtResource("5_iggs0")])
+One_Slot_Static_Prefabs = Array[PackedScene]([ExtResource("5_iggs0"), ExtResource("7_okymv")])
 
 [node name="LeftSpawn" type="Node3D" parent="ObstaclesSpawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -39.05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.25, -39.05)
 
 [node name="CentralSpawn" type="Node3D" parent="ObstaclesSpawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -39.0501)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -39.0501)
 
 [node name="RightSpawn" type="Node3D" parent="ObstaclesSpawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -39.05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.25, -39.05)
+
+[node name="Escenario" parent="." instance=ExtResource("1_sxt48")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 7.2, 0)
