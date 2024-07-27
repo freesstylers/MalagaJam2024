@@ -15,7 +15,7 @@ var meters_per_obstacle : float = 300
 
 var game_lost : bool = false
 
-enum ObstacleType { ONE_SLOT_STATIC = 0, TWO_SLOT_STATIC, ONE_SLOT_MOVING, ONE_STATIC_ONE_MOVE, TWO_SLOT_MOVE, OBSTACLE_TYPE_MAX }
+enum ObstacleType { ONE_SLOT_STATIC = 0, TWO_SLOT_STATIC, ONE_SLOT_MOVING, ONE_STATIC_ONE_MOVE, OBSTACLE_TYPE_MAX }
 
 func _ready():
 	Globals.get_ready_to_run.connect(on_get_ready_to_run)

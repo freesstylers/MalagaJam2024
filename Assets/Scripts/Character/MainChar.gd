@@ -5,15 +5,15 @@ extends CharacterBody3D
 
 @export var minSpeed = 2.0
 @export var maxSpeed = 14.0
-@export var minAcceleration : float = 2.0
-@export var maxAcceleration : float = 10.0
+@export var minAcceleration : float = 5.0
+@export var maxAcceleration : float = 20.0
 var acceleration : float = 5.0
 
 # Variable que controla cuanto tarda en cambiar de dirección
 # -1 para full borracho, -20 para full ebrio
 @export var minDrift : float = -1.0
 @export var maxDrift : float = -20.0
-var drift : float = -5.0
+var drift : float = -1.0
 
 @export var limits : float = 5.0
 
