@@ -3,7 +3,7 @@ extends Node3D
 
 @export var Moving_Thing : Node3D = self
 @export var Moving_Thing_Shadow : Node3D = self
-@export var Points_When_Evaded : int = 100
+@export var Points_When_Evaded : int = 50
 @export var Vel_Reduction : float = 100
 
 @export var Spawn_Pos : Vector3 = Vector3.ZERO

@@ -3,6 +3,7 @@ extends Node
 
 @export var lerp_factor : float = 1
 @onready var speed_bar : ProgressBar = $CanvasLayer/TextureRect/ProgressBar
+@onready var score_meter : Label = $CanvasLayer/ScoreBackground/Score
 
 var visual_bar_value : float = 0
 var current_bar_value : float = 0
@@ -15,3 +16,6 @@ func _process(delta):
 func update_player_velocity(player_velocity):
 	var bar_value = (player_velocity - Globals.MIN_RUNNING_VEL)/(Globals.MAX_RUNNING_VEL - Globals.MIN_RUNNING_VEL) 
 	current_bar_value = bar_value * 100
+	
+func update_score(new_score : int):
+	score_meter.text = str(new_score)

@@ -1,3 +1,4 @@
+class_name MainChar
 extends CharacterBody3D
 
 @export var maxSpeed = 14.0

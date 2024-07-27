@@ -5,13 +5,16 @@ extends Node
 @export var obstacle_spawn_manager : ObstaclesSpawnManager = null
 @export var scenary_visuals : ScenaryVisualizer = null
 @export var ui_manager : InGameUIManager = null
+@export var main_char : MainChar = null
 var player_visualizer = null
 
-var player_points : int = 0
+var player_points : float = 0.0
 var player_velocity : float = Globals.MIN_RUNNING_VEL
 var player_acceleration : float = Globals.MIN_RUNNING_ACCELERATION
 var player_is_stunned = false
 var player_is_playing = true
+
+var drunk_percentage : float = 1.0
 
 @onready var player_hit_timer : Timer = $HitTimer
 
@@ -35,6 +38,8 @@ func _process(delta):
 	scenary_visuals.set_velocity((player_velocity / Globals.MAX_RUNNING_VEL)*100)
 	#Accelerate, add runned points...
 	Run(delta)
+	player_points += (movement + movement * drunk_percentage) * delta
+	ui_manager.update_score(round(player_points))
 
 func Run(deltaTime):
 	#If player is "stunned" dont accelerate until recovered
@@ -43,19 +48,22 @@ func Run(deltaTime):
 	
 	var additional_points = 0
 	player_points = player_points + additional_points
+	ui_manager.update_score(round(player_points))
 
 #SIGNALS
-func on_get_ready_to_run():
+func on_get_ready_to_run(drunk_meter):
 	player_points = 0
 	player_velocity = 0
 	player_acceleration = 0
 	player_is_playing = false
 	player_is_stunned = false
 	
+	drunk_percentage = drunk_meter
+	
 	road_manager.clear_obstacles()
 
 func on_obstacle_avoided(points_won):
-	player_points = player_points + points_won
+	player_points = player_points + points_won + points_won * drunk_percentage
 	#ui_manager.VisualFeedback()
 	#player_visualizer.VisualFeedBack()
 
