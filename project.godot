@@ -26,6 +26,7 @@ gd="*res://addons/godot-action/utils_gd_action.tscn"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="viewport"
+mouse_cursor/custom_image="res://Assets/Art/UI/Hand_Mouse.png"
 
 [editor_plugins]
 

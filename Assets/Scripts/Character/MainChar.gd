@@ -2,9 +2,9 @@ class_name MainChar
 extends CharacterBody3D
 
 @export var maxSpeed = 14.0
-@export var minAcceleration : float = 1.0
-@export var maxAcceleration : float = 2.0
-var acceleration : float = 1.5
+@export var minAcceleration : float = 2.0
+@export var maxAcceleration : float = 10.0
+var acceleration : float = 5.0
 
 # Variable que controla cuanto tarda en cambiar de dirección
 # -1 para full borracho, -20 para full ebrio
