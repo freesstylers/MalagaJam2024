@@ -92,14 +92,14 @@ func SpawnObstacleScreen():
 			new_obstacle = instantiate_an_obstacle(One_Slot_Static_Prefabs)
 			var static_pos : Vector3 = Vector3(random_pos_index_to_vector(index_static_slot).x, new_obstacle.position.y,new_obstacle.position.z)
 			new_obstacle.program_movement(static_pos,static_pos)
-		ObstacleType.TWO_SLOT_MOVE:
-			var x_pos_1 = (LeftPositionNode.position.x + CentralPositionNode.position.x) / 2 
-			var x_pos_2 = (RightPositionNode.position.x + CentralPositionNode.position.x) / 2 
-			#Get an obstacle to spawn
-			var new_obstacle = instantiate_an_obstacle(Two_Slot_Moving_Prefabs)
-			var random_pos_1 : Vector3 = Vector3(x_pos_1, new_obstacle.position.y,new_obstacle.position.z)
-			var random_pos_2 : Vector3 = Vector3(x_pos_2, new_obstacle.position.y,new_obstacle.position.z)
-			new_obstacle.program_movement(random_pos_1, random_pos_2)
+		#ObstacleType.TWO_SLOT_MOVE:
+			#var x_pos_1 = (LeftPositionNode.position.x + CentralPositionNode.position.x) / 2 
+			#var x_pos_2 = (RightPositionNode.position.x + CentralPositionNode.position.x) / 2 
+			##Get an obstacle to spawn
+			#var new_obstacle = instantiate_an_obstacle(Two_Slot_Moving_Prefabs)
+			#var random_pos_1 : Vector3 = Vector3(x_pos_1, new_obstacle.position.y,new_obstacle.position.z)
+			#var random_pos_2 : Vector3 = Vector3(x_pos_2, new_obstacle.position.y,new_obstacle.position.z)
+			#new_obstacle.program_movement(random_pos_1, random_pos_2)
 
 func on_get_ready_to_run():
 	meters_till_next_obstacle = meters_per_obstacle

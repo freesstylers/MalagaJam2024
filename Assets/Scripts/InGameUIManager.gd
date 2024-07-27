@@ -1,7 +1,7 @@
 class_name InGameUIManager
 extends Node
 
-@export var lerp_factor : float = 1
+@export var lerp_factor : float = 3
 @onready var speed_bar : ProgressBar = $CanvasLayer/TextureRect/ProgressBar
 @onready var score_meter : Label = $CanvasLayer/ScoreBackground/Score
 

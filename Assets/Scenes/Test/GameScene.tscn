@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dmwo8b8ys8y4m" path="res://Assets/Prefabs/ObstacleStop.tscn" id="7_k8fks"]
 [ext_resource type="PackedScene" uid="uid://bpkx88jwrfylw" path="res://Assets/Prefabs/ObstacleCacahuete.tscn" id="7_okymv"]
 [ext_resource type="PackedScene" uid="uid://ccw2150gfgt2m" path="res://Assets/Scenes/Character/MainChar.tscn" id="7_yvq0n"]
-[ext_resource type="PackedScene" path="res://Assets/Scenes/GameScene/camera_3d.tscn" id="8_a6tfl"]
+[ext_resource type="PackedScene" uid="uid://cd62nw1l8bby" path="res://Assets/Scenes/GameScene/camera_3d.tscn" id="8_a6tfl"]
 [ext_resource type="PackedScene" uid="uid://d3rbtmu3pxuph" path="res://Assets/Prefabs/ObstaclePogzalo.tscn" id="8_q7m0o"]
 [ext_resource type="PackedScene" uid="uid://c0xy85yai5vig" path="res://Assets/Prefabs/ObstacleCow.tscn" id="9_m7cgd"]
 [ext_resource type="PackedScene" uid="uid://b277v2uoa80f3" path="res://Assets/Prefabs/ObstacleChinese.tscn" id="10_4pvwj"]
