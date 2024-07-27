@@ -1,3 +1,157 @@
-[gd_scene format=3 uid="uid://cbu022obp55qh"]
+[gd_scene load_steps=20 format=3 uid="uid://cbu022obp55qh"]
 
-[node name="DrinkingScene" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://dyusk2obrgeit" path="res://Assets/Art/DrinkingPhase/DrinkingPhase_BG.png" id="1_siixe"]
+[ext_resource type="Theme" uid="uid://di5ar5q2wit0o" path="res://Assets/UI/Themes/ImgButton.tres" id="2_0ktis"]
+[ext_resource type="Script" path="res://Assets/Scripts/DrinksMinigame.gd" id="3_gq16e"]
+[ext_resource type="Texture2D" uid="uid://crd40lbgjwkai" path="res://Assets/Art/DrinkingPhase/Cerveza.png" id="3_pit4u"]
+[ext_resource type="Texture2D" uid="uid://cf365fyyx0l2" path="res://Assets/Art/DrinkingPhase/Mojito.png" id="4_heu7b"]
+[ext_resource type="Texture2D" uid="uid://3p6hfok33gw8" path="res://Assets/Art/DrinkingPhase/Daikiri.png" id="6_a7eim"]
+[ext_resource type="Texture2D" uid="uid://cbqhh2t7vjnpv" path="res://Assets/Art/DrinkingPhase/Cerveza_Botella.png" id="7_6gm5t"]
+[ext_resource type="Texture2D" uid="uid://bcikb5xti4rlx" path="res://Assets/Art/DrinkingPhase/Toxico.png" id="8_sq15j"]
+[ext_resource type="PackedScene" uid="uid://1nvdap51vw02" path="res://Assets/Prefabs/InGameUI.tscn" id="9_0bj3y"]
+[ext_resource type="AudioStream" uid="uid://uelvryacxm20" path="res://Assets/Sound/SFX/InGame/Drinks/Bottle.wav" id="10_oa7vy"]
+[ext_resource type="AudioStream" uid="uid://c6xmuvhb1a20v" path="res://Assets/Sound/SFX/InGame/Drinks/Bubble Pops.wav" id="11_xhiuq"]
+[ext_resource type="AudioStream" uid="uid://c4ubfuyqqs1f2" path="res://Assets/Sound/SFX/InGame/Drinks/Bubbles Gurgling 1.wav" id="12_81as3"]
+[ext_resource type="AudioStream" uid="uid://7ruarg8mcft6" path="res://Assets/Sound/SFX/InGame/Drinks/Bubbles Gurgling 2.wav" id="13_fk68b"]
+[ext_resource type="AudioStream" uid="uid://r2j8j4gfy81b" path="res://Assets/Sound/SFX/InGame/Drinks/Bubbles.wav" id="14_2legi"]
+[ext_resource type="AudioStream" uid="uid://keo7diqo81om" path="res://Assets/Sound/SFX/InGame/Drinks/Cuckoo Clock.wav" id="15_1pr2g"]
+[ext_resource type="AudioStream" uid="uid://new0evhho3ms" path="res://Assets/Sound/SFX/InGame/Drinks/Mud Pour.wav" id="16_wdxda"]
+[ext_resource type="AudioStream" uid="uid://cysty2m6qy52v" path="res://Assets/Sound/SFX/InGame/Drinks/Sludge.wav" id="17_xkw5q"]
+[ext_resource type="AudioStream" uid="uid://b0s058a51yra7" path="res://Assets/Sound/SFX/InGame/Drinks/Splash.wav" id="18_aycf0"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_eie4j"]
+streams_count = 9
+stream_0/stream = ExtResource("10_oa7vy")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("11_xhiuq")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("12_81as3")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("13_fk68b")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("14_2legi")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("15_1pr2g")
+stream_5/weight = 1.0
+stream_6/stream = ExtResource("16_wdxda")
+stream_6/weight = 1.0
+stream_7/stream = ExtResource("17_xkw5q")
+stream_7/weight = 1.0
+stream_8/stream = ExtResource("18_aycf0")
+stream_8/weight = 1.0
+
+[node name="DrinkingScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_siixe")
+metadata/_edit_use_anchors_ = true
+
+[node name="UI" parent="." instance=ExtResource("9_0bj3y")]
+layout_mode = 1
+
+[node name="DrinksContainer" type="Control" parent="." node_paths=PackedStringArray("UI", "extraFocus", "DrinksSFX")]
+anchors_preset = 0
+anchor_left = 0.0229167
+anchor_top = 0.548148
+anchor_right = 0.967708
+anchor_bottom = 0.809259
+theme = ExtResource("2_0ktis")
+script = ExtResource("3_gq16e")
+drinksSprites = Array[Texture]([ExtResource("3_pit4u"), ExtResource("7_6gm5t"), ExtResource("6_a7eim"), ExtResource("4_heu7b"), ExtResource("8_sq15j")])
+UI = NodePath("../UI")
+extraFocus = NodePath("../AuxFocus")
+DrinksSFX = NodePath("../DrinkSounds")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="DrinksContainer"]
+z_index = 1
+layout_mode = 0
+offset_left = 126.0
+offset_top = 28.0
+offset_right = 190.0
+offset_bottom = 92.0
+scale = Vector2(6, 6)
+pivot_offset = Vector2(32, 32)
+icon = ExtResource("4_heu7b")
+
+[node name="Button2" type="Button" parent="DrinksContainer"]
+layout_mode = 0
+offset_left = 398.0
+offset_top = -104.0
+offset_right = 462.0
+offset_bottom = -40.0
+scale = Vector2(6, 6)
+pivot_offset = Vector2(32, 32)
+icon = ExtResource("3_pit4u")
+
+[node name="Button3" type="Button" parent="DrinksContainer"]
+z_index = 1
+layout_mode = 0
+offset_left = 632.0
+offset_top = 33.0
+offset_right = 696.0
+offset_bottom = 97.0
+scale = Vector2(6, 6)
+pivot_offset = Vector2(32, 32)
+icon = ExtResource("6_a7eim")
+
+[node name="Button4" type="Button" parent="DrinksContainer"]
+layout_mode = 0
+offset_left = 923.0
+offset_top = -80.0
+offset_right = 987.0
+offset_bottom = -16.0
+scale = Vector2(6, 6)
+pivot_offset = Vector2(32, 32)
+icon = ExtResource("3_pit4u")
+
+[node name="Button5" type="Button" parent="DrinksContainer"]
+z_index = 1
+layout_mode = 0
+offset_left = 1167.0
+offset_top = 42.0
+offset_right = 1231.0
+offset_bottom = 106.0
+scale = Vector2(6, 6)
+pivot_offset = Vector2(32, 32)
+icon = ExtResource("3_pit4u")
+
+[node name="Button6" type="Button" parent="DrinksContainer"]
+layout_mode = 0
+offset_left = 1394.0
+offset_top = -98.0
+offset_right = 1458.0
+offset_bottom = -34.0
+scale = Vector2(6, 6)
+pivot_offset = Vector2(32, 32)
+icon = ExtResource("7_6gm5t")
+
+[node name="AuxFocus" type="Button" parent="."]
+layout_mode = 0
+offset_left = -45.0
+offset_top = 31.0
+offset_right = -37.0
+offset_bottom = 39.0
+
+[node name="DrinkSounds" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamRandomizer_eie4j")
+
+[connection signal="pressed" from="DrinksContainer/Button" to="DrinksContainer" method="_on_drink_pressed" binds= [0]]
+[connection signal="pressed" from="DrinksContainer/Button2" to="DrinksContainer" method="_on_drink_pressed" binds= [1]]
+[connection signal="pressed" from="DrinksContainer/Button3" to="DrinksContainer" method="_on_drink_pressed" binds= [2]]
+[connection signal="pressed" from="DrinksContainer/Button4" to="DrinksContainer" method="_on_drink_pressed" binds= [3]]
+[connection signal="pressed" from="DrinksContainer/Button5" to="DrinksContainer" method="_on_drink_pressed" binds= [4]]
+[connection signal="pressed" from="DrinksContainer/Button6" to="DrinksContainer" method="_on_drink_pressed" binds= [5]]
