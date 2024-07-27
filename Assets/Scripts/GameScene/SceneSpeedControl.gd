@@ -5,7 +5,7 @@ var m:float
 var children : Array[ShaderMaterial]
 var localTime : float = 0.0
 var offset : float = 0.0
-var menos:float  = 0.0
+var menos:float  = 1.0
 
 func _ready():
 	for c in get_children():
@@ -46,4 +46,7 @@ func set_velocity(vel:float):
 	#Calculo del siguiente offset para ajustar y que no haga salto
 	var fakeoffset = localTime/60.0 * velocity
 	fakeoffset =  fakeoffset - floor(fakeoffset) #Offset entre 0 y 1
-	menos = abs(fakeoffset - offset)
+	menos = fakeoffset - offset
+	if(menos < 0):
+		menos = 1 + menos
+		print("Paso lo que paso")
