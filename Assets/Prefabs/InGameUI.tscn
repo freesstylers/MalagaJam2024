@@ -53,3 +53,8 @@ value = 90.45
 fill_mode = 3
 show_percentage = false
 metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0

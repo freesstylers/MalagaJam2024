@@ -22,8 +22,8 @@ func PlayerIsRunning(player_velocity):
 func on_obstacle_spawned(new_obstacle):
 	var pathF3D = PathFollow3D.new()
 	add_child(pathF3D)
-	pathF3D.add_child(new_obstacle)
 	pathF3D.progress_ratio = 0
+	pathF3D.add_child(new_obstacle)
 	RoadObjects.append(pathF3D)
 
 func clear_obstacles():

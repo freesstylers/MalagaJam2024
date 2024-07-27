@@ -35,9 +35,21 @@ one_shot = true
 curve = SubResource("Curve3D_vbbg1")
 script = ExtResource("6_4lv5d")
 
-[node name="ObstaclesSpawner" type="Node3D" parent="."]
+[node name="ObstaclesSpawner" type="Node3D" parent="." node_paths=PackedStringArray("CentralPositionNode", "RightPositionNode", "LeftPositionNode")]
 script = ExtResource("4_0whah")
-ObstaclePrefab = ExtResource("5_iggs0")
+CentralPositionNode = NodePath("CentralSpawn")
+RightPositionNode = NodePath("RightSpawn")
+LeftPositionNode = NodePath("LeftSpawn")
+One_Slot_Static_Prefabs = Array[PackedScene]([ExtResource("5_iggs0")])
+
+[node name="LeftSpawn" type="Node3D" parent="ObstaclesSpawner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -39.05)
+
+[node name="CentralSpawn" type="Node3D" parent="ObstaclesSpawner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -39.0501)
+
+[node name="RightSpawn" type="Node3D" parent="ObstaclesSpawner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -39.05)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 7.2, 0)

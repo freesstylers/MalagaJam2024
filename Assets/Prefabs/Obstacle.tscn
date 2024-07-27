@@ -19,9 +19,10 @@ transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 0, 0, 0)
 texture = ExtResource("1_s8e1h")
 script = ExtResource("3_ekr3u")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="Sprite3D"]
+transform = Transform3D(2.85714, 0, 0, 0, 2.85714, 0, 0, 0, 2.85714, 0, 0, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
 shape = SubResource("BoxShape3D_qwo7k")
 
-[connection signal="body_entered" from="Area3D" to="." method="on_body_entered"]
+[connection signal="body_entered" from="Sprite3D/Area3D" to="." method="on_body_entered"]
