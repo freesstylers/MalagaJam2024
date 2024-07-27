@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkurnpku3pp5i"]
+
+[ext_resource type="PackedScene" uid="uid://cudlslr7a78d3" path="res://Assets/Scenes/GameScene/escenario.tscn" id="1_sxt48"]
+
+[node name="GameScene" type="Node3D"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.45343, -13.9002)
+light_energy = 9.081
+omni_range = 42.1848
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 7.2, 0)
+keep_aspect = 0
+fov = 110.0
+
+[node name="Escenario" parent="." instance=ExtResource("1_sxt48")]

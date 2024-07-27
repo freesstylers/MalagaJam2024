@@ -1,0 +1,74 @@
+[gd_scene load_steps=14 format=3 uid="uid://cudlslr7a78d3"]
+
+[ext_resource type="Script" path="res://Assets/Scripts/GameScene/SceneSpeedControl.gd" id="1_3tiia"]
+[ext_resource type="Shader" path="res://Assets/Shaders/Scenery/Movimiento.gdshader" id="2_eafyt"]
+[ext_resource type="Texture2D" uid="uid://deq7j7tydheqj" path="res://Assets/Art/Walls.png" id="3_rg7u8"]
+[ext_resource type="Texture2D" uid="uid://dbye04fiwsj2p" path="res://Assets/Art/Scenario/Floor.png" id="4_87y31"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_711qq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fbivc"]
+render_priority = 0
+shader = ExtResource("2_eafyt")
+shader_parameter/velocidad = Vector2(-10, 0)
+shader_parameter/multiply = 1.0
+shader_parameter/albedo_texture = ExtResource("3_rg7u8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5xp44"]
+next_pass = SubResource("ShaderMaterial_fbivc")
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+disable_receive_shadows = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8dy70"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qg207"]
+render_priority = 0
+shader = ExtResource("2_eafyt")
+shader_parameter/velocidad = Vector2(10, 0)
+shader_parameter/multiply = 1.0
+shader_parameter/albedo_texture = ExtResource("3_rg7u8")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r2n44"]
+next_pass = SubResource("ShaderMaterial_qg207")
+albedo_color = Color(0.584314, 0.584314, 0.584314, 1)
+albedo_texture = ExtResource("4_87y31")
+albedo_texture_force_srgb = true
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gnidm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_355ej"]
+render_priority = 0
+shader = ExtResource("2_eafyt")
+shader_parameter/velocidad = Vector2(0, -10)
+shader_parameter/multiply = 1.0
+shader_parameter/albedo_texture = ExtResource("4_87y31")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h6kog"]
+next_pass = SubResource("ShaderMaterial_355ej")
+texture_filter = 0
+
+[node name="Escenario" type="Node3D"]
+script = ExtResource("1_3tiia")
+velocity = 10.0
+
+[node name="CasasDerecha" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.74228e-07, -10, 4.37114e-07, 0, -4.37114e-07, -10, 20, -4.37114e-07, 1.91069e-14, 10, 10, -20)
+mesh = SubResource("PlaneMesh_711qq")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_5xp44")
+
+[node name="CasasIzquierda" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.02679e-06, 10, -4.37114e-07, 0, -4.37114e-07, -10, -20, -4.01339e-06, 1.75431e-13, -10, 10, -20)
+mesh = SubResource("PlaneMesh_8dy70")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_r2n44")
+
+[node name="Carretera" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, -20)
+mesh = SubResource("PlaneMesh_gnidm")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_h6kog")
