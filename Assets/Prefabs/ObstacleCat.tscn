@@ -1,14 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpkx88jwrfylw"]
+[gd_scene load_steps=5 format=3 uid="uid://che8xov8mskne"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/Obstacle.gd" id="1_m62n5"]
-[ext_resource type="Texture2D" uid="uid://dgktpomoj8cd2" path="res://Assets/Art/Scenario/Obstaculos/Cacahuete.png" id="2_0eshi"]
-[ext_resource type="Script" path="res://Assets/Scripts/Character/LookAtCamera.gd" id="3_s2c1t"]
+[ext_resource type="Script" path="res://Assets/Scripts/Obstacle.gd" id="1_acbev"]
+[ext_resource type="Texture2D" uid="uid://dqqa1k0p73fae" path="res://Assets/Art/Scenario/Obstaculos/Cat.png" id="2_dvp77"]
+[ext_resource type="Script" path="res://Assets/Scripts/Character/LookAtCamera.gd" id="3_qwqkh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qwo7k"]
-size = Vector3(0.135956, 0.324585, 0.0541382)
+size = Vector3(0.11184, 0.26754, 0.0453491)
 
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("Moving_Thing", "Moving_Thing_Shadow")]
-script = ExtResource("1_m62n5")
+script = ExtResource("1_acbev")
 Moving_Thing = NodePath("Sprite3D")
 Moving_Thing_Shadow = NodePath("Shadow")
 Vel_Reduction = 50.0
@@ -20,7 +20,7 @@ centered = false
 offset = Vector2(-28, 0)
 modulate = Color(0, 0, 0, 0.603922)
 texture_filter = 0
-texture = ExtResource("2_0eshi")
+texture = ExtResource("2_dvp77")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
@@ -28,14 +28,14 @@ sorting_offset = 1.0
 centered = false
 offset = Vector2(-28, 0)
 texture_filter = 0
-texture = ExtResource("2_0eshi")
-script = ExtResource("3_s2c1t")
+texture = ExtResource("2_dvp77")
+script = ExtResource("3_qwqkh")
 
 [node name="Area3D" type="Area3D" parent="Sprite3D"]
 transform = Transform3D(2.85714, 0, 0, 0, 2.85714, 0, 0, 0, 2.85714, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00276186, 0.156555, -0.00765991)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.010369, 0.135906, -0.0052185)
 shape = SubResource("BoxShape3D_qwo7k")
 
 [connection signal="body_entered" from="Sprite3D/Area3D" to="." method="on_body_entered"]

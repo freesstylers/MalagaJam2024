@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bkurnpku3pp5i"]
+[gd_scene load_steps=18 format=3 uid="uid://bkurnpku3pp5i"]
 
 [ext_resource type="PackedScene" uid="uid://cudlslr7a78d3" path="res://Assets/Scenes/GameScene/escenario.tscn" id="1_sxt48"]
 [ext_resource type="Shader" path="res://Assets/Shaders/Scenery/Drunk.gdshader" id="2_4t3tn"]
@@ -7,9 +7,14 @@
 [ext_resource type="Script" path="res://Assets/Scripts/ObstaclesSpawnManager.gd" id="4_0whah"]
 [ext_resource type="PackedScene" uid="uid://c8up7sntu1403" path="res://Assets/Prefabs/Obstacle.tscn" id="5_iggs0"]
 [ext_resource type="Script" path="res://Assets/Scripts/RoadManager.gd" id="6_4lv5d"]
-[ext_resource type="PackedScene" uid="uid://nm0qfmg83xtm" path="res://Assets/Prefabs/ObstacleCacahuete.tscn" id="7_okymv"]
+[ext_resource type="PackedScene" uid="uid://dmwo8b8ys8y4m" path="res://Assets/Prefabs/ObstacleStop.tscn" id="7_k8fks"]
+[ext_resource type="PackedScene" uid="uid://bpkx88jwrfylw" path="res://Assets/Prefabs/ObstacleCacahuete.tscn" id="7_okymv"]
 [ext_resource type="PackedScene" uid="uid://ccw2150gfgt2m" path="res://Assets/Scenes/Character/MainChar.tscn" id="7_yvq0n"]
 [ext_resource type="PackedScene" uid="uid://cd62nw1l8bby" path="res://Assets/Scenes/GameScene/camera_3d.tscn" id="8_a6tfl"]
+[ext_resource type="PackedScene" uid="uid://d3rbtmu3pxuph" path="res://Assets/Prefabs/ObstaclePogzalo.tscn" id="8_q7m0o"]
+[ext_resource type="PackedScene" uid="uid://c0xy85yai5vig" path="res://Assets/Prefabs/ObstacleCow.tscn" id="9_m7cgd"]
+[ext_resource type="PackedScene" uid="uid://b277v2uoa80f3" path="res://Assets/Prefabs/ObstacleChinese.tscn" id="10_4pvwj"]
+[ext_resource type="PackedScene" uid="uid://che8xov8mskne" path="res://Assets/Prefabs/ObstacleCat.tscn" id="11_8vdt4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_86u0v"]
 shader = ExtResource("2_4t3tn")
@@ -18,7 +23,7 @@ shader_parameter/distorsion_speed = 1.0
 
 [sub_resource type="Curve3D" id="Curve3D_vbbg1"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 1, -40, 0, 0, 0, 0, 0, 0, -0.019, 1, 0.021),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -40, 0, 0, 0, 0, 0, 0, -0.019, 0, 0.021),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -43,18 +48,15 @@ one_shot = true
 curve = SubResource("Curve3D_vbbg1")
 script = ExtResource("6_4lv5d")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Road"]
-transform = Transform3D(-1, 0, 0.000474842, 0, 1, 0, -0.000474842, 0, -1, -0.00766651, 1, -23.8515)
-progress = 16.1485
-
-[node name="Node3D" parent="Road/PathFollow3D" instance=ExtResource("5_iggs0")]
-
 [node name="ObstaclesSpawner" type="Node3D" parent="." node_paths=PackedStringArray("CentralPositionNode", "RightPositionNode", "LeftPositionNode")]
 script = ExtResource("4_0whah")
 CentralPositionNode = NodePath("CentralSpawn")
 RightPositionNode = NodePath("RightSpawn")
 LeftPositionNode = NodePath("LeftSpawn")
-One_Slot_Static_Prefabs = Array[PackedScene]([ExtResource("5_iggs0"), ExtResource("7_okymv")])
+One_Slot_Static_Prefabs = Array[PackedScene]([ExtResource("5_iggs0"), ExtResource("7_k8fks"), ExtResource("8_q7m0o")])
+Two_Slot_Static_Prefabs = Array[PackedScene]([ExtResource("9_m7cgd")])
+One_Slot_Moving_Prefabs = Array[PackedScene]([ExtResource("10_4pvwj"), ExtResource("11_8vdt4"), ExtResource("7_okymv")])
+Two_Slot_Moving_Prefabs = Array[PackedScene]([ExtResource("9_m7cgd")])
 
 [node name="LeftSpawn" type="Node3D" parent="ObstaclesSpawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0.25, -39.05)

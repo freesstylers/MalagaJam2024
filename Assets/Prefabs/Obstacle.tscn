@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Assets/Scripts/Character/LookAtCamera.gd" id="3_ekr3u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qwo7k"]
-size = Vector3(3, 3, 1)
+size = Vector3(0.111422, 0.119812, 0.0453491)
 
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("Moving_Thing", "Moving_Thing_Shadow")]
 script = ExtResource("1_eidqs")
@@ -15,7 +15,7 @@ Vel_Reduction = 50.0
 Movement_Delay = 2.0
 
 [node name="Shadow" type="Sprite3D" parent="."]
-transform = Transform3D(6, 0, 0, 0, -2.62268e-07, 6, 0, -6, -2.62268e-07, -0.0285823, 0.0179918, 0.327769)
+transform = Transform3D(6, 0, 0, 0, -2.62268e-07, 6, 0, -6, -2.62268e-07, 0, 0, 0)
 centered = false
 offset = Vector2(-28, 0)
 modulate = Color(0, 0, 0, 0.603922)
@@ -23,7 +23,7 @@ texture_filter = 0
 texture = ExtResource("2_ifyj3")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, -0.291488, 0)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0)
 sorting_offset = 1.0
 centered = false
 offset = Vector2(-28, 0)
@@ -35,6 +35,7 @@ script = ExtResource("3_ekr3u")
 transform = Transform3D(2.85714, 0, 0, 0, 2.85714, 0, 0, 0, 2.85714, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Sprite3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00085928, 0.0620422, -0.0052185)
 shape = SubResource("BoxShape3D_qwo7k")
 
 [connection signal="body_entered" from="Sprite3D/Area3D" to="." method="on_body_entered"]

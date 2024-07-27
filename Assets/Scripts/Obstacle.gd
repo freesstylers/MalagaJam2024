@@ -12,13 +12,8 @@ extends Node3D
 @export var Loop_Back : bool = true
 @export var Movement_Duration : float = 1.0
 
-#func _ready():
-	#if Spawn_Pos != Vector3.ZERO or Dest_pos != Vector3.ZERO:
-		#program_movement(Spawn_Pos, Dest_pos, Movement_Duration, Movement_Delay)
-
 func _exit_tree():
 	Globals.obstacle_avoided.emit(Points_When_Evaded)
-	#Globals.obstacle_hit.emit(Vel_Reduction)	
 
 func on_body_entered(other_body):
 	if other_body.is_in_group("PLAYER"):

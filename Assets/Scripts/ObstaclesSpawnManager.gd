@@ -8,7 +8,6 @@ extends Node
 @export var One_Slot_Static_Prefabs : Array[PackedScene] = []
 @export var Two_Slot_Static_Prefabs : Array[PackedScene] = []
 @export var One_Slot_Moving_Prefabs : Array[PackedScene] = []
-@export var One_Static_One_Moving_Prefabs : Array[PackedScene] = []
 @export var Two_Slot_Moving_Prefabs : Array[PackedScene] = []
 
 var meters_till_next_obstacle : float = 0
@@ -26,7 +25,7 @@ func PlayerIsRunning(player_velocity):
 
 func SpawnObstacleScreen():
 	meters_till_next_obstacle = meters_per_obstacle
-	var new_screen_type = ObstacleType.ONE_SLOT_STATIC#randi() % ObstacleType.OBSTACLE_TYPE_MAX
+	var new_screen_type = randi() % ObstacleType.OBSTACLE_TYPE_MAX
 	match new_screen_type:
 		ObstacleType.ONE_SLOT_STATIC:
 			#Get a random obstacle
@@ -42,7 +41,7 @@ func SpawnObstacleScreen():
 				while random_index_1 == random_index_2:
 					random_index_2 = randi()%3
 				#Get an obstacle to spawn
-				var new_obstacle = instantiate_an_obstacle(One_Slot_Static_Prefabs)
+				var new_obstacle = instantiate_an_obstacle(Two_Slot_Static_Prefabs)
 				var random_pos_1 : Vector3 = Vector3(random_pos_index_to_vector(random_index_1).x, new_obstacle.position.y,new_obstacle.position.z)
 				var random_pos_2 : Vector3 = Vector3(random_pos_index_to_vector(random_index_2).x, new_obstacle.position.y,new_obstacle.position.z)
 				var result_pos = (random_pos_1+random_pos_2)/2
@@ -68,7 +67,7 @@ func SpawnObstacleScreen():
 			while random_index_1 == random_index_2:
 				random_index_2 = randi()%3
 			#Get an obstacle to spawn
-			var new_obstacle = instantiate_an_obstacle(One_Slot_Static_Prefabs)
+			var new_obstacle = instantiate_an_obstacle(One_Slot_Moving_Prefabs)
 			var random_pos_1 : Vector3 = Vector3(random_pos_index_to_vector(random_index_1).x, new_obstacle.position.y,new_obstacle.position.z)
 			var random_pos_2 : Vector3 = Vector3(random_pos_index_to_vector(random_index_2).x, new_obstacle.position.y,new_obstacle.position.z)
 			new_obstacle.program_movement(random_pos_1, random_pos_2)
@@ -79,7 +78,7 @@ func SpawnObstacleScreen():
 			while random_index_1 == random_index_2:
 				random_index_2 = randi()%3
 			#Get an obstacle to spawn
-			var new_obstacle = instantiate_an_obstacle(One_Slot_Static_Prefabs)
+			var new_obstacle = instantiate_an_obstacle(One_Slot_Moving_Prefabs)
 			var random_pos_1 : Vector3 = Vector3(random_pos_index_to_vector(random_index_1).x, new_obstacle.position.y,new_obstacle.position.z)
 			var random_pos_2 : Vector3 = Vector3(random_pos_index_to_vector(random_index_2).x, new_obstacle.position.y,new_obstacle.position.z)
 			new_obstacle.program_movement(random_pos_1, random_pos_2)
@@ -92,7 +91,7 @@ func SpawnObstacleScreen():
 			var x_pos_1 = (LeftPositionNode.position.x + CentralPositionNode.position.x) / 2 
 			var x_pos_2 = (RightPositionNode.position.x + CentralPositionNode.position.x) / 2 
 			#Get an obstacle to spawn
-			var new_obstacle = instantiate_an_obstacle(One_Slot_Static_Prefabs)
+			var new_obstacle = instantiate_an_obstacle(Two_Slot_Moving_Prefabs)
 			var random_pos_1 : Vector3 = Vector3(x_pos_1, new_obstacle.position.y,new_obstacle.position.z)
 			var random_pos_2 : Vector3 = Vector3(x_pos_2, new_obstacle.position.y,new_obstacle.position.z)
 			new_obstacle.program_movement(random_pos_1, random_pos_2)
