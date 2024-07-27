@@ -9,7 +9,7 @@ extends AweSplashScreenViewport
 
 @export_file("*png") var logo_path = "res://src/demo_collection/dark/src/logo.png"
 @export var title := "GODOT"
-@export var description := "Todos los valores y actitudes presentes en este juego\n son una performance y carecen de todo tipo de apoyo.\n\n\nSolo nos vanagloriamos de nuestra propia estupidez.\n\n\nAtentamente, FreeStylers Studio "
+var description := "TRIGGER WARNINGS: ALCHOHOL + CACAHUETES\n\nTodos los valores y actitudes presentes en este juego\n son una performance y carecen de todo tipo de apoyo.\n\n\nSolo nos vanagloriamos de nuestra propia estupidez.\n\n\nAtentamente, FreeStylers Studio "
 
 @export var duration := 4.0
 @export var background_color: Color = Color8(0, 0, 0, 255)
