@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dw2qv5x8fo8iq"]
+[gd_scene load_steps=6 format=3 uid="uid://dw2qv5x8fo8iq"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/RunManager.gd" id="1_3vxij"]
 [ext_resource type="Script" path="res://Assets/Scripts/RoadManager.gd" id="2_8l8ep"]
 [ext_resource type="Texture2D" uid="uid://dyhaqh723vgtc" path="res://Assets/Art/MainMenu/logo-malagajam.png" id="3_267sy"]
-[ext_resource type="PackedScene" uid="uid://c8up7sntu1403" path="res://Assets/Prefabs/Obstacle.tscn" id="3_hh2nq"]
 [ext_resource type="Script" path="res://Assets/Scripts/ObstaclesSpawnManager.gd" id="4_l2e2g"]
 
 [sub_resource type="Curve3D" id="Curve3D_2e541"]
@@ -25,7 +24,6 @@ one_shot = true
 
 [node name="ObstaclesSpawner" type="Node3D" parent="."]
 script = ExtResource("4_l2e2g")
-ObstaclePrefab = ExtResource("3_hh2nq")
 
 [node name="Road" type="Path3D" parent="." node_paths=PackedStringArray("RoadObjects")]
 curve = SubResource("Curve3D_2e541")

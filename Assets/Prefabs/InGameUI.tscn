@@ -1,12 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://1nvdap51vw02"]
+[gd_scene load_steps=10 format=3 uid="uid://1nvdap51vw02"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/InGameUIManager.gd" id="1_ih1af"]
 [ext_resource type="Texture2D" uid="uid://bi8xdw4tgwfsv" path="res://Assets/Art/UI/Alcoholism_Bar1.png" id="1_rao6h"]
 [ext_resource type="Texture2D" uid="uid://bj1gwgdwrkpys" path="res://Assets/Art/UI/Points_UI.png" id="3_0vd7o"]
+[ext_resource type="Shader" path="res://Assets/Prefabs/BeerShader.gdshader" id="3_b5anq"]
 [ext_resource type="FontFile" uid="uid://ccag7totcpphf" path="res://Assets/UI/Fonts/Retro Gaming.ttf" id="4_2u64m"]
+[ext_resource type="Texture2D" uid="uid://0dxi4c5qmu5b" path="res://Assets/Shaders/beer3.jpg" id="4_54jbh"]
+[ext_resource type="Script" path="res://Assets/Scripts/ProgressBarShaderLogic.gd" id="5_5obc4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qm0yl"]
+shader = ExtResource("3_b5anq")
+shader_parameter/p = 100.0
+shader_parameter/beer = ExtResource("4_54jbh")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wv331"]
-bg_color = Color(1, 0.619608, 0, 1)
+bg_color = Color(1, 0.619608, 0, 0)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -37,22 +45,25 @@ texture = ExtResource("1_rao6h")
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/TextureRect"]
 z_index = -1
+material = SubResource("ShaderMaterial_qm0yl")
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.897917
-anchor_top = 0.526978
-anchor_right = 0.897917
-anchor_bottom = 0.526978
+anchor_left = 0.90573
+anchor_top = 0.514194
+anchor_right = 0.90573
+anchor_bottom = 0.514194
 offset_left = -44.9667
 offset_top = -83.4981
 offset_right = -5.96669
 offset_bottom = 76.5019
+scale = Vector2(0.942125, 1)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/fill = SubResource("StyleBoxFlat_wv331")
-value = 90.45
 fill_mode = 3
 show_percentage = false
+script = ExtResource("5_5obc4")
+mat = SubResource("ShaderMaterial_qm0yl")
 metadata/_edit_use_anchors_ = true
 
 [node name="ScoreBackground" type="TextureRect" parent="CanvasLayer"]
