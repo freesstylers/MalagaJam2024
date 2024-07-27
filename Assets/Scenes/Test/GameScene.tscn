@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bkurnpku3pp5i"]
+[gd_scene load_steps=12 format=3 uid="uid://bkurnpku3pp5i"]
 
 [ext_resource type="PackedScene" uid="uid://cudlslr7a78d3" path="res://Assets/Scenes/GameScene/escenario.tscn" id="1_sxt48"]
+[ext_resource type="Shader" path="res://Assets/Shaders/Scenery/Drunk.gdshader" id="2_4t3tn"]
 [ext_resource type="PackedScene" uid="uid://1nvdap51vw02" path="res://Assets/Prefabs/InGameUI.tscn" id="2_xo5ro"]
 [ext_resource type="Script" path="res://Assets/Scripts/RunManager.gd" id="3_pjs81"]
 [ext_resource type="Script" path="res://Assets/Scripts/ObstaclesSpawnManager.gd" id="4_0whah"]
@@ -8,6 +9,12 @@
 [ext_resource type="Script" path="res://Assets/Scripts/RoadManager.gd" id="6_4lv5d"]
 [ext_resource type="PackedScene" uid="uid://nm0qfmg83xtm" path="res://Assets/Prefabs/ObstacleCacahuete.tscn" id="7_okymv"]
 [ext_resource type="PackedScene" uid="uid://ccw2150gfgt2m" path="res://Assets/Scenes/Character/MainChar.tscn" id="7_yvq0n"]
+[ext_resource type="PackedScene" uid="uid://cd62nw1l8bby" path="res://Assets/Scenes/GameScene/camera_3d.tscn" id="8_a6tfl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_86u0v"]
+shader = ExtResource("2_4t3tn")
+shader_parameter/distorsion_factor = 0.0
+shader_parameter/distorsion_speed = 1.0
 
 [sub_resource type="Curve3D" id="Curve3D_vbbg1"]
 _data = {
@@ -19,6 +26,7 @@ point_count = 2
 [node name="GameScene" type="Node3D"]
 
 [node name="Control" parent="." instance=ExtResource("2_xo5ro")]
+material = SubResource("ShaderMaterial_86u0v")
 
 [node name="RunManager" type="Node3D" parent="." node_paths=PackedStringArray("road_manager", "obstacle_spawn_manager", "scenary_visuals", "ui_manager")]
 script = ExtResource("3_pjs81")
@@ -58,10 +66,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.25, -39.05)
 
 [node name="Escenario" parent="." instance=ExtResource("1_sxt48")]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 7.2, 0)
-keep_aspect = 0
-fov = 110.0
+[node name="Camera3D" parent="." instance=ExtResource("8_a6tfl")]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.45343, -13.9002)

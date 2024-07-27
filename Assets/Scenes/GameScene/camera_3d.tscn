@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cd62nw1l8bby"]
+
+[ext_resource type="Shader" path="res://Assets/Shaders/Scenery/Drunk.gdshader" id="1_rwjpj"]
+[ext_resource type="Texture2D" uid="uid://cg58ef5hv3fca" path="res://Assets/Shaders/Noise/bubbleNoise.png" id="2_qcrlm"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_swt61"]
+noise_type = 3
+seed = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ghd8a"]
+noise = SubResource("FastNoiseLite_swt61")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ujyv"]
+shader = ExtResource("1_rwjpj")
+shader_parameter/distorsion_factor = 5.0
+shader_parameter/distorsion_speed = 0.1
+shader_parameter/noise_1 = ExtResource("2_qcrlm")
+shader_parameter/noise_2 = SubResource("NoiseTexture2D_ghd8a")
+
+[node name="Camera3D" type="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 7.2, 0)
+keep_aspect = 0
+fov = 110.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DrunkEffect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_7ujyv")
+offset_left = 4.0
+offset_top = -8.0
+offset_right = 1964.0
+offset_bottom = 1197.0
