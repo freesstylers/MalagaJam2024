@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dydsbhlsld3h0"
+path="res://.godot/imported/Liquid Fart.wav-1e3db6a7a473672fe2b9968d34b77624.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/SFX/InGame/Dodge/Liquid Fart.wav"
+dest_files=["res://.godot/imported/Liquid Fart.wav-1e3db6a7a473672fe2b9968d34b77624.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -7,6 +7,8 @@ extends CharacterBody3D
 # -1 para full borracho, -20 para full ebrio
 @export var drift : float = -20.0
 
+@export var limits : float = 5.0
+
 var speed = 0.0
 var target_velocity = Vector3.ZERO
 var direction : Vector3 = Vector3.ZERO
@@ -47,5 +49,8 @@ func _physics_process(delta):
 	target_velocity.x = direction.x * speed
 
 	velocity = target_velocity
-	move_and_slide()
-	
+	if position.x < limits and direction.x > 0 or position.x > -limits and direction.x < 0:
+		move_and_slide()
+	else:
+		velocity = Vector3.ZERO
+		speed = 0

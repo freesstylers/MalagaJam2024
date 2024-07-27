@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://hsv16fexjsu2"
+path="res://.godot/imported/Goofy Steps & Dip.wav-fe4a1e97378ba9b86d057f32eb3365fe.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/SFX/InGame/Running/Goofy Steps & Dip.wav"
+dest_files=["res://.godot/imported/Goofy Steps & Dip.wav-fe4a1e97378ba9b86d057f32eb3365fe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

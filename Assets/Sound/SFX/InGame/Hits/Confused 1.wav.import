@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://devwjlp1j0g5q"
+path="res://.godot/imported/Confused 1.wav-fdec2b7d38e172e8d1af6370890c3ca6.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/SFX/InGame/Hits/Confused 1.wav"
+dest_files=["res://.godot/imported/Confused 1.wav-fdec2b7d38e172e8d1af6370890c3ca6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

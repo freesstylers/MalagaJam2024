@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ce80aith5lulw"
+path="res://.godot/imported/Furious 2 (Whistle).wav-4737dbba53adc90e3b22c3246349617e.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/SFX/InGame/Obstacles/Furious 2 (Whistle).wav"
+dest_files=["res://.godot/imported/Furious 2 (Whistle).wav-4737dbba53adc90e3b22c3246349617e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

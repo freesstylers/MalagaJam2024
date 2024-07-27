@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://6p8ldv8wj0oc"
+path="res://.godot/imported/Fall 1.wav-785863858698faa2e2b726f5ca91725f.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/SFX/InGame/Ending/Fall 1.wav"
+dest_files=["res://.godot/imported/Fall 1.wav-785863858698faa2e2b726f5ca91725f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

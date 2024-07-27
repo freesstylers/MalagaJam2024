@@ -7,8 +7,6 @@ uniform float offset = 00.0f;
 uniform float time;
 
 void fragment() {
-	//vec2 nuv = vec2(UV.x + (time/60.0f * dir.x * multiply) + offset*dir.x
-				  //, UV.y + (time/60.0f * dir.y * multiply) + offset*dir.y);
 	
 	vec2 nuv = vec2(UV.x + offset*dir.x, UV.y + offset*dir.y);
 	vec4 text = texture( albedo_texture , nuv);

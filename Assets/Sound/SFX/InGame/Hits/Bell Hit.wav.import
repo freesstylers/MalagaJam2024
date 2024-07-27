@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://fralp6v24clo"
+path="res://.godot/imported/Bell Hit.wav-cef34c861e5bd4ae792afde86b438192.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/SFX/InGame/Hits/Bell Hit.wav"
+dest_files=["res://.godot/imported/Bell Hit.wav-cef34c861e5bd4ae792afde86b438192.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

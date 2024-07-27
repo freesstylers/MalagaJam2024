@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dmb0k31io6wbv"
+path="res://.godot/imported/Horn 2.wav-8d440775c76aaf4831c298b7b9a95828.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/SFX/InGame/Dodge/Horn 2.wav"
+dest_files=["res://.godot/imported/Horn 2.wav-8d440775c76aaf4831c298b7b9a95828.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

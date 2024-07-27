@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bf30lp7g8jkyr"
+path="res://.godot/imported/Dip 8.wav-2df46590ba0a31af7d17f5470822cd4f.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/SFX/InGame/Running/Dip 8.wav"
+dest_files=["res://.godot/imported/Dip 8.wav-2df46590ba0a31af7d17f5470822cd4f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bylrn23yb10i6"
+path="res://.godot/imported/Club Fart.wav-0fa4d5c624f4914dc022a39145ba7611.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/SFX/InGame/Dodge/Club Fart.wav"
+dest_files=["res://.godot/imported/Club Fart.wav-0fa4d5c624f4914dc022a39145ba7611.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -50,4 +50,3 @@ func set_velocity(vel:float):
 	menos = fakeoffset - offset
 	if(menos < 0):
 		menos = 1 + menos
-		print("Paso lo que paso")

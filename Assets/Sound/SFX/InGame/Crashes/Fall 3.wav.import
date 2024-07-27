@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://qh251jm4gvfl"
+path="res://.godot/imported/Fall 3.wav-763d9dcd218bc09d06c7955bb407862b.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/SFX/InGame/Crashes/Fall 3.wav"
+dest_files=["res://.godot/imported/Fall 3.wav-763d9dcd218bc09d06c7955bb407862b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
