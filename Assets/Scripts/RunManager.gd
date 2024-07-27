@@ -71,7 +71,7 @@ func on_obstacle_avoided():
 func on_obstacle_hit(vel_reduction):
 	player_is_stunned = true
 	# Perder
-	if player_velocity-vel_reduction < Globals.MIN_RUNNING_VEL:
+	if player_velocity < Globals.DEATH_VEL:
 		Globals.player_lost.emit()
 		player_velocity = 5.0
 		return

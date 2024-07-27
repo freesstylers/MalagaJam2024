@@ -10,6 +10,8 @@ extends Node
 @export var One_Slot_Moving_Prefabs : Array[PackedScene] = []
 @export var Two_Slot_Moving_Prefabs : Array[PackedScene] = []
 
+@export var min_meters : float = 100.0
+@export var max_meters : float = 300.0
 var meters_till_next_obstacle : float = 0
 var meters_per_obstacle : float = 300
 
@@ -29,7 +31,7 @@ func PlayerIsRunning(player_velocity):
 		SpawnObstacleScreen()	
 
 func SpawnObstacleScreen():
-	meters_till_next_obstacle = meters_per_obstacle
+	meters_till_next_obstacle = randf_range(min_meters, max_meters)
 	var new_screen_type = randi() % ObstacleType.OBSTACLE_TYPE_MAX
 	match new_screen_type:
 		ObstacleType.ONE_SLOT_STATIC:

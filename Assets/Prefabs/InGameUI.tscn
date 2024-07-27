@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://1nvdap51vw02"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/InGameUIManager.gd" id="1_ih1af"]
-[ext_resource type="Texture2D" uid="uid://bi8xdw4tgwfsv" path="res://Assets/Art/UI/Alcoholism_Bar1.png" id="1_rao6h"]
+[ext_resource type="Texture2D" uid="uid://c75yh7xj5dh5" path="res://Assets/Art/UI/Speed_Bar.png" id="2_py28o"]
 [ext_resource type="Texture2D" uid="uid://bj1gwgdwrkpys" path="res://Assets/Art/UI/Points_UI.png" id="3_0vd7o"]
 [ext_resource type="Shader" path="res://Assets/Prefabs/BeerShader.gdshader" id="3_b5anq"]
 [ext_resource type="FontFile" uid="uid://ccag7totcpphf" path="res://Assets/UI/Fonts/Retro Gaming.ttf" id="4_2u64m"]
@@ -36,12 +36,12 @@ anchor_right = 0.897917
 anchor_bottom = 0.521296
 offset_left = -85.0006
 offset_top = -369.0
-offset_right = -21.0006
+offset_right = -53.0006
 offset_bottom = -193.0
 scale = Vector2(4, 4)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_rao6h")
+texture = ExtResource("2_py28o")
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/TextureRect"]
 z_index = -1
