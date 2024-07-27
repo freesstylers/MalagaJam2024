@@ -13,8 +13,6 @@ func _ready():
 		finished_all.connect(self._on_finished_all_splash_screen)
 		start_play_list_screen()
 
-
-
 # Working only for screen type AweSplashScreen and you much set
 # type skip = SKIP_ONE_SCREEN_WHEN_CLICKED or SKIP_ALL_SCREEN_WHEN_CLICKED
 # Todo: update condition skip splash screen: when you click, when you press key...

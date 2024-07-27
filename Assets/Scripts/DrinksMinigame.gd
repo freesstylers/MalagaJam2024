@@ -23,7 +23,8 @@ func _process(delta):
 	secondsMinigame -= delta
 	
 	if secondsMinigame <= 0:
-		#Globals.SceneMngr.loadScene(3)
+		Globals.get_ready_to_run.emit(score/100.0)
+		Globals.SceneMngr.loadScene(3)
 		pass
 
 func _on_drink_pressed(index):
