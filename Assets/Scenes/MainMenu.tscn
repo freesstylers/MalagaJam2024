@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c2wq025g6hkdx"]
+[gd_scene load_steps=10 format=3 uid="uid://c2wq025g6hkdx"]
 
 [ext_resource type="Theme" uid="uid://by6fgbsw0a1g3" path="res://Assets/UI/Themes/UI_General.tres" id="1_hg533"]
 [ext_resource type="Texture2D" uid="uid://dyhaqh723vgtc" path="res://Assets/Art/MainMenu/logo-malagajam.png" id="2_bdvi4"]
@@ -6,8 +6,9 @@
 [ext_resource type="Theme" uid="uid://di5ar5q2wit0o" path="res://Assets/UI/Themes/ImgButton.tres" id="3_f5e7c"]
 [ext_resource type="Texture2D" uid="uid://cljdp6y8gw51" path="res://Assets/Art/MainMenu/IconTwitter.png" id="3_pd52o"]
 [ext_resource type="Texture2D" uid="uid://cbko12ndwjsb" path="res://Assets/Art/MainMenu/FreeStylers_Logo.png" id="3_sv3cv"]
-[ext_resource type="Texture2D" uid="uid://dyusk2obrgeit" path="res://Assets/Art/DrinkingPhase/DrinkingPhase_BG.png" id="3_vak4f"]
+[ext_resource type="Texture2D" uid="uid://c0wl5475drj6a" path="res://Assets/Art/DrinkingPhase/DrinkingPhase_BG.png" id="3_vak4f"]
 [ext_resource type="Texture2D" uid="uid://dyprle6jxvkkl" path="res://Assets/Art/Logo.png" id="4_a0rvs"]
+[ext_resource type="AudioStream" uid="uid://b528akl8j2doa" path="res://Assets/Sound/Music/WelcomeHome.wav" id="9_hnnnb"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -190,6 +191,10 @@ offset_top = 706.0
 offset_right = 607.0
 offset_bottom = 821.0
 text = "¡Vuelta al tajo!"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_hnnnb")
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/ButtonContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/ButtonContainer/HowToPlay" to="." method="_on_how_to_play_pressed"]
