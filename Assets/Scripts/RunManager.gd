@@ -37,6 +37,7 @@ func _process(delta):
 	scenary_visuals.set_velocity((player_velocity / Globals.MAX_RUNNING_VEL)*100)
 	#Accelerate, add runned points...
 	Run(delta)
+	main_char.set_animation_speed(player_velocity)
 	if game_lost:
 		return
 	player_points += (movement + movement * drunk_percentage) * delta

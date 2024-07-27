@@ -1,6 +1,9 @@
 class_name MainChar
 extends CharacterBody3D
 
+@onready var animation : AnimatedSprite3D = $AnimatedSprite3D
+
+@export var minSpeed = 2.0
 @export var maxSpeed = 14.0
 @export var minAcceleration : float = 2.0
 @export var maxAcceleration : float = 10.0
@@ -21,6 +24,7 @@ var changingDir : bool = false
 	
 func _ready():
 	Globals.get_ready_to_run.connect(on_get_ready_to_run)
+	animation.play()
 	
 func on_get_ready_to_run(drunk_meter):
 	acceleration = minAcceleration + (maxAcceleration-minAcceleration)*drunk_meter
@@ -66,3 +70,6 @@ func _physics_process(delta):
 	else:
 		velocity = Vector3.ZERO
 		speed = 0
+		
+func set_animation_speed(real_speed):
+	animation.speed_scale = 0.25 + 0.75*(real_speed/(Globals.MAX_RUNNING_VEL-Globals.MIN_RUNNING_VEL))

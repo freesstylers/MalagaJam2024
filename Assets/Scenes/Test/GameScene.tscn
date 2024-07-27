@@ -77,6 +77,8 @@ light_energy = 9.081
 omni_range = 42.1848
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("7_yvq0n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.181)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.54521)
+minAcceleration = 10.0
+maxAcceleration = 20.0
 
 [connection signal="timeout" from="RunManager/HitTimer" to="RunManager" method="on_hit_timer_ended"]
