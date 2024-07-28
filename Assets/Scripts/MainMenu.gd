@@ -33,8 +33,8 @@ func _on_how_to_play_pressed():
 	$CanvasLayer/HowToPlay.visible = true
 
 func _on_play_pressed():
-	Globals.SceneMngr.playButtonSFX()
-
+	#Globals.SceneMngr.playButtonSFX()
+	Globals.SceneMngr.loadScene(Globals.Scene.DRINK_SCENE)
 
 func _on_credits_close_pressed():
 	#Globals.SceneMngr.playButtonSFX()

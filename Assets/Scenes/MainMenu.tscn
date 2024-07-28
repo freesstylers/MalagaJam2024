@@ -6,7 +6,7 @@
 [ext_resource type="Theme" uid="uid://di5ar5q2wit0o" path="res://Assets/UI/Themes/ImgButton.tres" id="3_f5e7c"]
 [ext_resource type="Texture2D" uid="uid://cljdp6y8gw51" path="res://Assets/Art/MainMenu/IconTwitter.png" id="3_pd52o"]
 [ext_resource type="Texture2D" uid="uid://cbko12ndwjsb" path="res://Assets/Art/MainMenu/FreeStylers_Logo.png" id="3_sv3cv"]
-[ext_resource type="Texture2D" uid="uid://c0wl5475drj6a" path="res://Assets/Art/DrinkingPhase/DrinkingPhase_BG.png" id="3_vak4f"]
+[ext_resource type="Texture2D" uid="uid://dyusk2obrgeit" path="res://Assets/Art/DrinkingPhase/DrinkingPhase_BG.png" id="3_vak4f"]
 [ext_resource type="Texture2D" uid="uid://dyprle6jxvkkl" path="res://Assets/Art/Logo.png" id="4_a0rvs"]
 [ext_resource type="AudioStream" uid="uid://b528akl8j2doa" path="res://Assets/Sound/Music/WelcomeHome.wav" id="9_hnnnb"]
 
@@ -19,6 +19,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_hg533")
 script = ExtResource("2_l4j0y")
+metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -33,8 +34,9 @@ texture = ExtResource("3_vak4f")
 [node name="ButtonContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_left = 0.279167
-anchor_right = 0.720833
+anchor_right = 0.720834
 anchor_bottom = 1.0
+offset_right = -0.0012207
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_hg533")

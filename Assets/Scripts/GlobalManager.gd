@@ -17,7 +17,7 @@ func startGame(level: int):
 	
 func _on_transition_screen_screen_transitioned(currentLevel):
 	match currentLevel:
-		Globals.Scene.MAIN_SCENE:
+		Globals.Scene.MENU_SCENE:
 			pass
 
 func get_current_scene_node():
@@ -25,16 +25,26 @@ func get_current_scene_node():
 	pass
 
 func load_scene(number : int):
-	var current = get_current_scene_node().get_child(0) #CurrentScene
+	var current = get_current_scene_node()
+	var currChild = null
 	
-	if current != null:
-		current.queue_free()
+	if current.get_child_count() > 0:
+		currChild = current.get_child(0) #CurrentScene
+		if currChild != null:
+			currChild.queue_free()
+			currChild = null
 	
 	match (number):
 		Globals.Scene.SPLASH_SCREEN:
-			get_child(0).add_child(Game_Scenes[number].instantiate())
 			$FreeStylersSplash.play()
+		#Globals.Scene.MENU_SCENE:
+		#Globals.Scene.DRINK_SCENE:
 	
+	if current != null:		
+		get_child(0).add_child(Game_Scenes[number].instantiate())
+	else:
+		print("jose")
+		
 func fade_in_():
 	pass
 

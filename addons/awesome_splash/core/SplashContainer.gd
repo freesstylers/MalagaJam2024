@@ -25,6 +25,6 @@ func _skip_awe_splash_by_event(event) -> bool:
 # Todo: move to other screen here:
 func _on_finished_all_splash_screen():
 	if move_to_scene != null:
-		get_tree().change_scene_to_packed(move_to_scene)
+		Globals.SceneMngr.load_scene(Globals.Scene.MENU_SCENE)
 	else:
 		push_error("Please set move_to_scene in SplashContainer")
