@@ -32,6 +32,8 @@ func _ready():
 func on_get_ready_to_run(drunk_meter):
 	acceleration = minAcceleration + (maxAcceleration-minAcceleration)*drunk_meter
 	drift = maxDrift + (minDrift-maxDrift)*drunk_meter
+	if drift > -1.0:
+		drift = -1.0
 	player_velocity = 0
 	can_move = true
 
