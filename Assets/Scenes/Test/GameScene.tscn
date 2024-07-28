@@ -104,7 +104,6 @@ wait_time = 10.0
 [node name="Escenario" parent="." instance=ExtResource("1_sxt48")]
 
 [node name="Camera3D" parent="." instance=ExtResource("8_a6tfl")]
-current = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.45343, -13.9002)

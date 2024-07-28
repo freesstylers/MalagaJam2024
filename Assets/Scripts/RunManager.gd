@@ -47,6 +47,7 @@ func _process(delta):
 	if game_lost:
 		return
 	player_points += (movement + movement * drunk_percentage) * delta
+	Globals.finalScore = player_points as int
 	ui_manager.update_score(round(player_points))
 
 func Run(deltaTime):
@@ -57,6 +58,7 @@ func Run(deltaTime):
 #SIGNALS
 func on_get_ready_to_run(drunk_meter):
 	player_points = 0
+	Globals.finalScore = player_points
 	player_velocity = 0
 	player_is_playing = false
 	player_is_stunned = false
