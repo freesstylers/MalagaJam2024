@@ -11,6 +11,8 @@ var score = 0.0
 
 @export var secondsMinigame : float = 7.0
 
+@export var videoPlayer : VideoStreamPlayer = null
+@export var Frases : AudioStreamPlayer2D = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	score = 0.0
@@ -18,14 +20,17 @@ func _ready():
 	for iteration in get_children():
 		iteration.icon = drinksSprites[rng.randf_range(0, drinksSprites.size())]
 
+var change : bool = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	secondsMinigame -= delta
 	
 	if secondsMinigame <= 0:
-		Globals.SceneMngr.load_scene(Globals.Scene.PLAY_SCENE)
-		Globals.get_ready_to_run.emit(score/100.0)
-		pass
+		if not change:
+			change = true
+			videoPlayer.visible = true	
+			videoPlayer.play()
+			Frases.play()
 
 func _on_drink_pressed(index):
 	if get_child(index).icon == drinksSprites[0]:
@@ -59,3 +64,9 @@ func _on_drink_pressed(index):
 		#Set scale increasingly
 		).set_delay(rng.randf_range(0.5, 1.5))
 		#Reactivate
+
+
+func _on_video_stream_player_finished():
+	videoPlayer.stop()
+	Globals.SceneMngr.load_scene(Globals.Scene.PLAY_SCENE)
+	Globals.get_ready_to_run.emit(score/100.0)
