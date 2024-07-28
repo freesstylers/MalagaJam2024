@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bj3kqr4sbrc11"
-path.s3tc="res://.godot/imported/Alien.png-b6d776de8ff88016880614940bbfde5b.s3tc.ctex"
+path="res://.godot/imported/Alien.png-b6d776de8ff88016880614940bbfde5b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Assets/Art/Scenario/Obstaculos/Alien.png"
-dest_files=["res://.godot/imported/Alien.png-b6d776de8ff88016880614940bbfde5b.s3tc.ctex"]
+dest_files=["res://.godot/imported/Alien.png-b6d776de8ff88016880614940bbfde5b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

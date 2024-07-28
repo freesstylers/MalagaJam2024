@@ -58,7 +58,6 @@ func Run(deltaTime):
 func on_get_ready_to_run(drunk_meter):
 	player_points = 0
 	player_velocity = 0
-	player_acceleration = 0
 	player_is_playing = false
 	player_is_stunned = false
 	
