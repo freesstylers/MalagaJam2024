@@ -22,20 +22,30 @@ var target_velocity = Vector3.ZERO
 var direction : Vector3 = Vector3.ZERO
 var changingDir : bool = false
 var player_velocity : float = 0
+var can_move: bool = true
 	
 func _ready():
 	Globals.get_ready_to_run.connect(on_get_ready_to_run)
+	Globals.end_game.connect(on_end_game)
 	animation.play()
 	
 func on_get_ready_to_run(drunk_meter):
 	acceleration = minAcceleration + (maxAcceleration-minAcceleration)*drunk_meter
 	drift = maxDrift + (minDrift-maxDrift)*drunk_meter
 	player_velocity = 0
+	can_move = true
+
+func on_end_game():
+	can_move = false
 	
 func _physics_process(delta):
 	var isMoving = 0
 	var prevdir = direction.x
-
+	
+	#Bloqueamos el movimiento cuando terminamos partida
+	if not can_move:
+		return
+	
 	if not changingDir:
 		if Input.is_action_pressed("RIGHT"):
 			direction.x = 1

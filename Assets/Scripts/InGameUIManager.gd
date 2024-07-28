@@ -5,6 +5,7 @@ extends Node
 @onready var speed_bar : ProgressBeer = $CanvasLayer/TextureRect/ProgressBar
 @onready var score_meter : Label = $CanvasLayer/ScoreBackground/Score
 @onready var defeat_text : Label = $CanvasLayer/TextoDerrota
+@onready var end_game_UI : Control = $CanvasLayer/EndgameUI
 
 var visual_bar_value : float = 0
 var current_bar_value : float = 0
@@ -30,7 +31,16 @@ func on_player_lost():
 	var twin = create_tween()
 	twin.set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
 	twin.tween_property(defeat_text, "scale", Vector2(1,1), 1)
+	twin.tween_callback(go_to_end_game).set_delay(4)
 	
+func go_to_end_game():
+	Globals.end_game.emit()
+	end_game_UI.visible = true
+	score_meter.get_parent().visible = false
+	speed_bar.get_parent().visible = false
 
 func on_get_ready_to_run(drunk_meter):
 	defeat_text.scale = Vector2.ZERO
+	end_game_UI.visible = false
+	score_meter.get_parent().visible = true
+	speed_bar.get_parent().visible = true

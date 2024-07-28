@@ -17,4 +17,5 @@ signal obstacle_hit(vel_reduction)
 signal obstacle_spawned(obstacle)
 signal obstacle_avoided()
 signal player_lost()
-
+signal set_drunk_parameter(drink_meter)
+signal end_game()

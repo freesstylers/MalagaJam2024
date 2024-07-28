@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://1nvdap51vw02"]
+[gd_scene load_steps=13 format=3 uid="uid://1nvdap51vw02"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/InGameUIManager.gd" id="1_ih1af"]
 [ext_resource type="Texture2D" uid="uid://d2wjeohrcvehk" path="res://Assets/Art/UI/Speed_Bar.png" id="2_py28o"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://0dxi4c5qmu5b" path="res://Assets/Shaders/beer3.jpg" id="4_54jbh"]
 [ext_resource type="Script" path="res://Assets/Scripts/ProgressBarShaderLogic.gd" id="5_5obc4"]
 [ext_resource type="Shader" path="res://Assets/Shaders/BeerText.gdshader" id="8_ghjke"]
+[ext_resource type="PackedScene" uid="uid://d2c6cuklol8xr" path="res://Assets/Prefabs/endgame_ui.tscn" id="9_l1y1k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qm0yl"]
 shader = ExtResource("3_lp1dk")
@@ -112,3 +113,6 @@ theme_override_font_sizes/font_size = 60
 text = "HAS PERDIDO"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="EndgameUI" parent="CanvasLayer" instance=ExtResource("9_l1y1k")]
+visible = false

@@ -39,6 +39,8 @@ func test_vel():
 func set_offset_to_shaders(offset:float):
 	for c in children:
 		c.set_shader_parameter("offset", offset)
+		
+
 
 #Seteamos la velocidad que va a tener todo el escenario
 func set_velocity(vel:float):
