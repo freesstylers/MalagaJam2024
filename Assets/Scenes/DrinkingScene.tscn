@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://cbu022obp55qh"]
+[gd_scene load_steps=39 format=3 uid="uid://cbu022obp55qh"]
 
 [ext_resource type="Texture2D" uid="uid://c0wl5475drj6a" path="res://Assets/Art/DrinkingPhase/DrinkingPhase_BG.png" id="1_siixe"]
 [ext_resource type="Theme" uid="uid://di5ar5q2wit0o" path="res://Assets/UI/Themes/ImgButton.tres" id="2_0ktis"]
@@ -30,6 +30,9 @@
 [ext_resource type="AudioStream" uid="uid://dautrq1kam2po" path="res://Assets/Sound/SFX/Frases/5.ogg" id="28_d00yi"]
 [ext_resource type="AudioStream" uid="uid://bu3p4iat77cwo" path="res://Assets/Sound/SFX/Frases/6.ogg" id="29_ou50y"]
 [ext_resource type="AudioStream" uid="uid://c2b6x2d4o1i7k" path="res://Assets/Sound/SFX/Frases/7.ogg" id="30_qlngb"]
+[ext_resource type="FontFile" uid="uid://ccag7totcpphf" path="res://Assets/UI/Fonts/Retro Gaming.ttf" id="31_5y6vt"]
+[ext_resource type="Shader" path="res://Assets/Shaders/BeerText.gdshader" id="31_kc6p7"]
+[ext_resource type="Script" path="res://Assets/Scripts/BebeText.gd" id="33_l1wab"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_klsii"]
 shader = ExtResource("21_oucgl")
@@ -76,6 +79,10 @@ stream_5/stream = ExtResource("29_ou50y")
 stream_5/weight = 1.0
 stream_6/stream = ExtResource("30_qlngb")
 stream_6/weight = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5c7vn"]
+shader = ExtResource("31_kc6p7")
+shader_parameter/beer = ExtResource("22_ffjbb")
 
 [node name="DrinkingScene" type="Control"]
 layout_mode = 3
@@ -204,9 +211,9 @@ z_index = -1
 material = SubResource("ShaderMaterial_klsii")
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.1875
+anchor_left = 0.218749
 anchor_top = 0.0681818
-anchor_right = 0.78125
+anchor_right = 0.79687
 anchor_bottom = 0.954091
 offset_bottom = -9.92001
 grow_horizontal = 2
@@ -225,7 +232,6 @@ stream = SubResource("AudioStreamRandomizer_eie4j")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("19_kxo3u")
-volume_db = -5.0
 autoplay = true
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
@@ -242,7 +248,26 @@ stream = ExtResource("23_kxnao")
 
 [node name="VozCinematica" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamRandomizer_uo5a4")
-volume_db = 10.0
+
+[node name="BebeText" type="Label" parent="."]
+material = SubResource("ShaderMaterial_5c7vn")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 731.0
+offset_top = 81.0
+offset_right = -725.0
+offset_bottom = -808.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(232, 95)
+theme_override_fonts/font = ExtResource("31_5y6vt")
+theme_override_font_sizes/font_size = 150
+text = "BEBE"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("33_l1wab")
 
 [connection signal="pressed" from="DrinksContainer/Button" to="DrinksContainer" method="_on_drink_pressed" binds= [0]]
 [connection signal="pressed" from="DrinksContainer/Button2" to="DrinksContainer" method="_on_drink_pressed" binds= [1]]
