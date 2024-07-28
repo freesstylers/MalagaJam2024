@@ -35,6 +35,7 @@ func on_player_lost():
 	
 func go_to_end_game():
 	Globals.end_game.emit()
+	defeat_text.scale = Vector2.ZERO
 	end_game_UI.visible = true
 	score_meter.get_parent().visible = false
 	speed_bar.get_parent().visible = false
