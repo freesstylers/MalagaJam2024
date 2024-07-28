@@ -1,13 +1,12 @@
-[gd_scene load_steps=14 format=3 uid="uid://1nvdap51vw02"]
+[gd_scene load_steps=13 format=3 uid="uid://1nvdap51vw02"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/InGameUIManager.gd" id="1_ih1af"]
-[ext_resource type="Texture2D" uid="uid://c75yh7xj5dh5" path="res://Assets/Art/UI/Speed_Bar.png" id="2_py28o"]
-[ext_resource type="Texture2D" uid="uid://bj1gwgdwrkpys" path="res://Assets/Art/UI/Points_UI.png" id="3_0vd7o"]
+[ext_resource type="Texture2D" uid="uid://dqh7na2df68qs" path="res://Assets/Art/UI/Speed_Bar.png" id="2_py28o"]
+[ext_resource type="Texture2D" uid="uid://prh0lwc2yws8" path="res://Assets/Art/UI/Points_UI.png" id="3_0vd7o"]
 [ext_resource type="Shader" path="res://Assets/Shaders/Scenery/BeerShader.gdshader" id="3_lp1dk"]
 [ext_resource type="FontFile" uid="uid://ccag7totcpphf" path="res://Assets/UI/Fonts/Retro Gaming.ttf" id="4_2u64m"]
 [ext_resource type="Texture2D" uid="uid://0dxi4c5qmu5b" path="res://Assets/Shaders/beer3.jpg" id="4_54jbh"]
 [ext_resource type="Script" path="res://Assets/Scripts/ProgressBarShaderLogic.gd" id="5_5obc4"]
-[ext_resource type="Script" path="res://Assets/Scripts/ScoreBackground.gd" id="7_cjrj8"]
 [ext_resource type="Shader" path="res://Assets/Shaders/BeerText.gdshader" id="8_ghjke"]
 [ext_resource type="PackedScene" uid="uid://d2c6cuklol8xr" path="res://Assets/Prefabs/endgame_ui.tscn" id="9_l1y1k"]
 
@@ -76,13 +75,11 @@ mat = SubResource("ShaderMaterial_qm0yl")
 metadata/_edit_use_anchors_ = true
 
 [node name="ScoreBackground" type="TextureRect" parent="CanvasLayer"]
-visible = false
 offset_left = 50.0
 offset_top = 50.0
 offset_right = 306.0
 offset_bottom = 146.0
 texture = ExtResource("3_0vd7o")
-script = ExtResource("7_cjrj8")
 
 [node name="Score" type="Label" parent="CanvasLayer/ScoreBackground"]
 layout_mode = 1

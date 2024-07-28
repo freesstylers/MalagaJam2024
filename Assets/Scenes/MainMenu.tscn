@@ -6,8 +6,8 @@
 [ext_resource type="Theme" uid="uid://di5ar5q2wit0o" path="res://Assets/UI/Themes/ImgButton.tres" id="3_f5e7c"]
 [ext_resource type="Texture2D" uid="uid://cljdp6y8gw51" path="res://Assets/Art/MainMenu/IconTwitter.png" id="3_pd52o"]
 [ext_resource type="Texture2D" uid="uid://cbko12ndwjsb" path="res://Assets/Art/MainMenu/FreeStylers_Logo.png" id="3_sv3cv"]
-[ext_resource type="Texture2D" uid="uid://c0wl5475drj6a" path="res://Assets/Art/DrinkingPhase/DrinkingPhase_BG.png" id="3_vak4f"]
-[ext_resource type="Texture2D" uid="uid://dbme0lmprooga" path="res://Assets/Art/Logo.png" id="4_a0rvs"]
+[ext_resource type="Texture2D" uid="uid://dyusk2obrgeit" path="res://Assets/Art/DrinkingPhase/DrinkingPhase_BG.png" id="3_vak4f"]
+[ext_resource type="Texture2D" uid="uid://dyprle6jxvkkl" path="res://Assets/Art/Logo.png" id="4_a0rvs"]
 [ext_resource type="AudioStream" uid="uid://b528akl8j2doa" path="res://Assets/Sound/Music/WelcomeHome.wav" id="9_hnnnb"]
 [ext_resource type="FontFile" uid="uid://ccag7totcpphf" path="res://Assets/UI/Fonts/Retro Gaming.ttf" id="9_ymumo"]
 
@@ -55,33 +55,37 @@ size_flags_vertical = 4
 texture = ExtResource("4_a0rvs")
 
 [node name="Play" type="Button" parent="CanvasLayer/ButtonContainer"]
-custom_minimum_size = Vector2(600, 0)
+custom_minimum_size = Vector2(600, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_hg533")
-text = "Jugar"
+theme_override_font_sizes/font_size = 32
+text = "¡Jefe! ¡Otra ronda!"
 
 [node name="HowToPlay" type="Button" parent="CanvasLayer/ButtonContainer"]
-custom_minimum_size = Vector2(600, 0)
+custom_minimum_size = Vector2(600, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_hg533")
-text = "Tutorial"
+theme_override_font_sizes/font_size = 32
+text = "¿Cómo tirar cañas?"
 
 [node name="Credits" type="Button" parent="CanvasLayer/ButtonContainer"]
-custom_minimum_size = Vector2(600, 0)
+custom_minimum_size = Vector2(600, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_hg533")
-text = "Créditos"
+theme_override_font_sizes/font_size = 32
+text = "¿Quiénes son los jefes?"
 
 [node name="Quit" type="Button" parent="CanvasLayer/ButtonContainer"]
-custom_minimum_size = Vector2(600, 0)
+custom_minimum_size = Vector2(600, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_hg533")
-text = "Salir"
+theme_override_font_sizes/font_size = 32
+text = "¡Me voy!"
 
 [node name="ExtraButtonsLeft" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = -1
@@ -148,8 +152,9 @@ anchor_right = 0.944577
 anchor_bottom = 0.820931
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "Créditos
+text = "[center][font_size={48}]Créditos[/font_size]
 -----
 
 Gonzalo Cidoncha - El Enemigo
@@ -157,17 +162,20 @@ David Czepiel - El Obstáculo
 Ignacio Ory - El Mago
 Jose Martín - El Frisbee
 Pablo Grossi - El Gorro de Hablar
-Adán Sánchez - El Mojitos"
+Adán Sánchez - El Mojitos
+[/center]"
 fit_content = true
 autowrap_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="CreditsClose" type="Button" parent="CanvasLayer/Credits"]
+custom_minimum_size = Vector2(600, 40)
 layout_mode = 0
-offset_left = 228.0
-offset_top = 706.0
-offset_right = 607.0
+offset_left = 123.999
+offset_top = 736.0
+offset_right = 723.999
 offset_bottom = 821.0
+theme_override_font_sizes/font_size = 32
 text = "¡Vuelta al tajo!"
 
 [node name="HowToPlay" type="Panel" parent="CanvasLayer"]
@@ -189,8 +197,9 @@ offset_left = 45.0
 offset_top = 50.0
 offset_right = 801.0
 offset_bottom = 736.0
+theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[center]Cómo tirar cañas
+text = "[center][font_size={48}]Cómo tirar cañas[/font_size]
 -----
 
 1) En el bar, bebe (clicka) tanto como quieras para fijar tu propio reto
@@ -199,11 +208,13 @@ text = "[center]Cómo tirar cañas
 D/Flecha Derecha"
 
 [node name="HowToPlayClose" type="Button" parent="CanvasLayer/HowToPlay"]
+custom_minimum_size = Vector2(600, 40)
 layout_mode = 0
-offset_left = 228.0
-offset_top = 706.0
-offset_right = 607.0
+offset_left = 123.999
+offset_top = 737.0
+offset_right = 723.999
 offset_bottom = 821.0
+theme_override_font_sizes/font_size = 32
 text = "¡Vuelta al tajo!"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]

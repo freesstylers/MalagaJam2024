@@ -3,6 +3,8 @@ extends Node
 var SceneMngr : SceneManager = null 
 enum Scene {SPLASH_SCREEN, MENU_SCENE, DRINK_SCENE, PLAY_SCENE}
 
+var finalScore = 10
+
 #CONSTANTS
 const MIN_RUNNING_VEL = 20
 const MAX_RUNNING_VEL = 200
