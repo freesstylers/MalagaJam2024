@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c2wq025g6hkdx"]
+[gd_scene load_steps=11 format=3 uid="uid://c2wq025g6hkdx"]
 
 [ext_resource type="Theme" uid="uid://by6fgbsw0a1g3" path="res://Assets/UI/Themes/UI_General.tres" id="1_hg533"]
 [ext_resource type="Texture2D" uid="uid://dyhaqh723vgtc" path="res://Assets/Art/MainMenu/logo-malagajam.png" id="2_bdvi4"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dyusk2obrgeit" path="res://Assets/Art/DrinkingPhase/DrinkingPhase_BG.png" id="3_vak4f"]
 [ext_resource type="Texture2D" uid="uid://dyprle6jxvkkl" path="res://Assets/Art/Logo.png" id="4_a0rvs"]
 [ext_resource type="AudioStream" uid="uid://b528akl8j2doa" path="res://Assets/Sound/Music/WelcomeHome.wav" id="9_hnnnb"]
+[ext_resource type="FontFile" uid="uid://ccag7totcpphf" path="res://Assets/UI/Fonts/Retro Gaming.ttf" id="9_ymumo"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -17,8 +18,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_hg533")
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("2_l4j0y")
+meCagoEnTusMuertos = ExtResource("9_ymumo")
 metadata/_edit_use_anchors_ = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -34,12 +37,12 @@ texture = ExtResource("3_vak4f")
 [node name="ButtonContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchors_preset = -1
 anchor_left = 0.279167
-anchor_right = 0.720834
+anchor_right = 0.720833
 anchor_bottom = 1.0
-offset_right = -0.0012207
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme = ExtResource("1_hg533")
 theme_override_constants/separation = 32
 alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -55,25 +58,30 @@ texture = ExtResource("4_a0rvs")
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "¡Otra ronda!"
+size_flags_vertical = 4
+theme = ExtResource("1_hg533")
+text = "Jugar"
 
 [node name="HowToPlay" type="Button" parent="CanvasLayer/ButtonContainer"]
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "¿Cómo tiráis las cañas?"
+theme = ExtResource("1_hg533")
+text = "Tutorial"
 
 [node name="Credits" type="Button" parent="CanvasLayer/ButtonContainer"]
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "¿Quienes son los dueños?"
+theme = ExtResource("1_hg533")
+text = "Créditos"
 
 [node name="Quit" type="Button" parent="CanvasLayer/ButtonContainer"]
 custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 size_flags_horizontal = 4
-text = "La... ¿Cuenta?"
+theme = ExtResource("1_hg533")
+text = "Salir"
 
 [node name="ExtraButtonsLeft" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = -1
@@ -132,14 +140,16 @@ theme = ExtResource("1_hg533")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="RichTextLabel" parent="CanvasLayer/Credits"]
-layout_mode = 0
-offset_left = 45.0
-offset_top = 50.0
-offset_right = 801.0
-offset_bottom = 736.0
-theme = ExtResource("1_hg533")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0530661
+anchor_top = 0.0581396
+anchor_right = 0.944577
+anchor_bottom = 0.820931
+grow_horizontal = 2
+grow_vertical = 2
 bbcode_enabled = true
-text = "[center][font_size={64}]Créditos[/font_size]
+text = "Créditos
 -----
 
 Gonzalo Cidoncha - El Enemigo
@@ -148,6 +158,9 @@ Ignacio Ory - El Mago
 Jose Martín - El Frisbee
 Pablo Grossi - El Gorro de Hablar
 Adán Sánchez - El Mojitos"
+fit_content = true
+autowrap_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="CreditsClose" type="Button" parent="CanvasLayer/Credits"]
 layout_mode = 0
@@ -176,9 +189,8 @@ offset_left = 45.0
 offset_top = 50.0
 offset_right = 801.0
 offset_bottom = 736.0
-theme = ExtResource("1_hg533")
 bbcode_enabled = true
-text = "[center][font_size={64}]Cómo tirar cañas[/font_size]
+text = "[center]Cómo tirar cañas
 -----
 
 1) En el bar, bebe (clicka) tanto como quieras para fijar tu propio reto

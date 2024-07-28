@@ -24,20 +24,20 @@ func _process(delta):
 	
 	if secondsMinigame <= 0:
 		Globals.get_ready_to_run.emit(score/100.0)
-		Globals.SceneMngr.loadScene(3)
+		Globals.SceneMngr.load_scene(Globals.Scene.PLAY_SCENE)
 		pass
 
 func _on_drink_pressed(index):
 	if get_child(index).icon == drinksSprites[0]:
-		score += 5 
+		score += 3
 	elif get_child(index).icon == drinksSprites[1]:
-		score += 10
+		score += 6
 	elif get_child(index).icon == drinksSprites[2]:
-		score += 15 		
+		score += 9 		
 	elif get_child(index).icon == drinksSprites[3]:
-		score += 20 
+		score += 12 
 	elif get_child(index).icon == drinksSprites[4]:
-		score += 25 
+		score += 15 
 	elif get_child(index).icon == null:
 		pass
 

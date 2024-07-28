@@ -32,6 +32,10 @@ mouse_cursor/custom_image="res://Assets/Art/UI/Hand_Mouse.png"
 
 enabled=PackedStringArray("res://addons/awesome_splash/plugin.cfg", "res://addons/godot-action/plugin.cfg")
 
+[gui]
+
+fonts/dynamic_fonts/use_oversampling=false
+
 [input]
 
 LEFT={

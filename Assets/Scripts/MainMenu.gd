@@ -1,10 +1,10 @@
 extends Control
 
-@export var FirstButton : Button
+@export var meCagoEnTusMuertos: Font
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#FirstButton.grab_focus()
+	meCagoEnTusMuertos.fixed_size = 0
 	pass # Replace with function body.
 
 func FreeStylers():
@@ -34,7 +34,7 @@ func _on_how_to_play_pressed():
 
 func _on_play_pressed():
 	#Globals.SceneMngr.playButtonSFX()
-	Globals.SceneMngr.loadScene(Globals.Scene.DRINK_SCENE)
+	Globals.SceneMngr.load_scene(Globals.Scene.DRINK_SCENE)
 
 func _on_credits_close_pressed():
 	#Globals.SceneMngr.playButtonSFX()

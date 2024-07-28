@@ -1,6 +1,18 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://by6fgbsw0a1g3"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://by6fgbsw0a1g3"]
 
 [ext_resource type="FontFile" uid="uid://ccag7totcpphf" path="res://Assets/UI/Fonts/Retro Gaming.ttf" id="1_6uxix"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1trxx"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1p0n3"]
 bg_color = Color(0.27451, 0.682353, 0.592157, 1)
@@ -143,8 +155,8 @@ Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
 Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
-Button/font_sizes/font_size = 32
 Button/fonts/font = ExtResource("1_6uxix")
+Button/styles/disabled = SubResource("StyleBoxFlat_1trxx")
 Button/styles/focus = SubResource("StyleBoxFlat_1p0n3")
 Button/styles/hover = SubResource("StyleBoxFlat_5u8pu")
 Button/styles/normal = SubResource("StyleBoxFlat_2a60k")
@@ -156,5 +168,4 @@ OptionButton/styles/normal = SubResource("StyleBoxFlat_tqdtl")
 OptionButton/styles/pressed = SubResource("StyleBoxFlat_3o6y4")
 Panel/styles/panel = SubResource("StyleBoxFlat_558sw")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_fguge")
-RichTextLabel/font_sizes/normal_font_size = 32
 RichTextLabel/fonts/normal_font = ExtResource("1_6uxix")
