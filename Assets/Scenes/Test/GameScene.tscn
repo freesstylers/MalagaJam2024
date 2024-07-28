@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bkurnpku3pp5i"]
+[gd_scene load_steps=28 format=3 uid="uid://bkurnpku3pp5i"]
 
 [ext_resource type="PackedScene" uid="uid://cudlslr7a78d3" path="res://Assets/Scenes/GameScene/escenario.tscn" id="1_sxt48"]
 [ext_resource type="Shader" path="res://Assets/Shaders/Scenery/Drunk.gdshader" id="2_4t3tn"]
@@ -16,11 +16,12 @@
 [ext_resource type="PackedScene" uid="uid://ccw2150gfgt2m" path="res://Assets/Scenes/Character/MainChar.tscn" id="7_yvq0n"]
 [ext_resource type="PackedScene" uid="uid://cd62nw1l8bby" path="res://Assets/Scenes/GameScene/camera_3d.tscn" id="8_a6tfl"]
 [ext_resource type="PackedScene" uid="uid://d3rbtmu3pxuph" path="res://Assets/Prefabs/ObstaclePogzalo.tscn" id="8_q7m0o"]
-[ext_resource type="PackedScene" uid="uid://dx0knpycq5mkc" path="res://Assets/Prefabs/ObstaclePOPO.tscn" id="9_c3fyx"]
+[ext_resource type="AudioStream" uid="uid://bj21i481n4vkn" path="res://Assets/Sound/SFX/InGame/Ending/gameover.ogg" id="9_4dcsq"]
+[ext_resource type="PackedScene" path="res://Assets/Prefabs/ObstaclePOPO.tscn" id="9_c3fyx"]
 [ext_resource type="PackedScene" uid="uid://c0xy85yai5vig" path="res://Assets/Prefabs/ObstacleCow.tscn" id="9_m7cgd"]
 [ext_resource type="AudioStream" uid="uid://ciuc87wmjpd16" path="res://Assets/Sound/SFX/InGame/Dodge/blow.ogg" id="9_w44go"]
 [ext_resource type="PackedScene" uid="uid://b277v2uoa80f3" path="res://Assets/Prefabs/ObstacleChinese.tscn" id="10_4pvwj"]
-[ext_resource type="PackedScene" uid="uid://cg0jdw0gff70x" path="res://Assets/Prefabs/ObstacleAlien.tscn" id="10_d5xwn"]
+[ext_resource type="PackedScene" path="res://Assets/Prefabs/ObstacleAlien.tscn" id="10_d5xwn"]
 [ext_resource type="PackedScene" uid="uid://che8xov8mskne" path="res://Assets/Prefabs/ObstacleCat.tscn" id="11_8vdt4"]
 [ext_resource type="AudioStream" uid="uid://45docxo0ig2b" path="res://Assets/Sound/Music/PaquitoElSurfer2.wav" id="16_ya514"]
 
@@ -53,8 +54,9 @@ point_count = 2
 [node name="Control" parent="." instance=ExtResource("2_xo5ro")]
 material = SubResource("ShaderMaterial_86u0v")
 
-[node name="RunManager" type="Node3D" parent="." node_paths=PackedStringArray("road_manager", "obstacle_spawn_manager", "scenary_visuals", "ui_manager", "main_char")]
+[node name="RunManager" type="Node3D" parent="." node_paths=PackedStringArray("music", "road_manager", "obstacle_spawn_manager", "scenary_visuals", "ui_manager", "main_char")]
 script = ExtResource("3_pjs81")
+music = NodePath("../Music")
 road_manager = NodePath("../Road")
 obstacle_spawn_manager = NodePath("../ObstaclesSpawner")
 scenary_visuals = NodePath("../Escenario")
@@ -71,6 +73,9 @@ volume_db = -10.0
 [node name="DodgeSound" type="AudioStreamPlayer" parent="RunManager"]
 stream = ExtResource("9_w44go")
 volume_db = -10.0
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="RunManager"]
+stream = ExtResource("9_4dcsq")
 
 [node name="Road" type="Path3D" parent="."]
 curve = SubResource("Curve3D_vbbg1")

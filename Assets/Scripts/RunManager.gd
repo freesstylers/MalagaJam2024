@@ -3,6 +3,9 @@ extends Node
 
 @onready var hitSounds : AudioStreamPlayer = $CrashSounds
 @onready var dodgeSound : AudioStreamPlayer = $DodgeSound
+@onready var gameOverSound : AudioStreamPlayer = $GameOverSound
+
+@export var music : AudioStreamPlayer = null
 
 @export var road_manager : RoadManager = null
 @export var obstacle_spawn_manager : ObstaclesSpawnManager = null
@@ -74,6 +77,8 @@ func on_obstacle_hit(vel_reduction):
 	if player_velocity < Globals.DEATH_VEL:
 		Globals.player_lost.emit()
 		player_velocity = 5.0
+		music.stop()
+		gameOverSound.play()
 		return
 	player_hit_timer.start()
 	var local_tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
