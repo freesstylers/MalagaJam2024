@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://deq7j7tydheqj"
-path.bptc="res://.godot/imported/Walls.png-b320daa7401393ca5b334e18b34c7f08.bptc.ctex"
+path="res://.godot/imported/Walls.png-b320daa7401393ca5b334e18b34c7f08.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Assets/Art/Walls.png"
-dest_files=["res://.godot/imported/Walls.png-b320daa7401393ca5b334e18b34c7f08.bptc.ctex"]
+dest_files=["res://.godot/imported/Walls.png-b320daa7401393ca5b334e18b34c7f08.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbye04fiwsj2p"
-path.s3tc="res://.godot/imported/Floor.png-482736d60bb62e3f9053ccee4ce16278.s3tc.ctex"
+path="res://.godot/imported/Floor.png-482736d60bb62e3f9053ccee4ce16278.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Assets/Art/Scenario/Floor.png"
-dest_files=["res://.godot/imported/Floor.png-482736d60bb62e3f9053ccee4ce16278.s3tc.ctex"]
+dest_files=["res://.godot/imported/Floor.png-482736d60bb62e3f9053ccee4ce16278.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
