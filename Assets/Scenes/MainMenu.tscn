@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cljdp6y8gw51" path="res://Assets/Art/MainMenu/IconTwitter.png" id="3_pd52o"]
 [ext_resource type="Texture2D" uid="uid://cbko12ndwjsb" path="res://Assets/Art/MainMenu/FreeStylers_Logo.png" id="3_sv3cv"]
 [ext_resource type="Texture2D" uid="uid://c0wl5475drj6a" path="res://Assets/Art/DrinkingPhase/DrinkingPhase_BG.png" id="3_vak4f"]
-[ext_resource type="Texture2D" uid="uid://dyprle6jxvkkl" path="res://Assets/Art/Logo.png" id="4_a0rvs"]
+[ext_resource type="Texture2D" uid="uid://dbme0lmprooga" path="res://Assets/Art/Logo.png" id="4_a0rvs"]
 [ext_resource type="AudioStream" uid="uid://b528akl8j2doa" path="res://Assets/Sound/Music/WelcomeHome.wav" id="9_hnnnb"]
 [ext_resource type="FontFile" uid="uid://ccag7totcpphf" path="res://Assets/UI/Fonts/Retro Gaming.ttf" id="9_ymumo"]
 

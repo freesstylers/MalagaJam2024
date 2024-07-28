@@ -10,8 +10,15 @@ extends Node
 @export var One_Slot_Moving_Prefabs : Array[PackedScene] = []
 @export var Two_Slot_Moving_Prefabs : Array[PackedScene] = []
 
-@export var min_meters : float = 100.0
+@export var min_meters : float = 200.0
 @export var max_meters : float = 300.0
+var current_min_meters : float = min_meters
+var current_max_meters : float = max_meters
+var final_min_meters : float = 50.0
+var final_max_meters : float = 100.0
+
+@onready var decrease_meters_timer = $DecreaseSpawnMetersTimer
+
 var meters_till_next_obstacle : float = 0
 var meters_per_obstacle : float = 300
 
@@ -31,7 +38,7 @@ func PlayerIsRunning(player_velocity):
 		SpawnObstacleScreen()	
 
 func SpawnObstacleScreen():
-	meters_till_next_obstacle = randf_range(min_meters, max_meters)
+	meters_till_next_obstacle = randf_range(current_min_meters, current_max_meters)
 	var new_screen_type = randi() % ObstacleType.OBSTACLE_TYPE_MAX
 	match new_screen_type:
 		ObstacleType.ONE_SLOT_STATIC:
@@ -102,11 +109,6 @@ func SpawnObstacleScreen():
 			#var random_pos_1 : Vector3 = Vector3(x_pos_1, new_obstacle.position.y,new_obstacle.position.z)
 			#var random_pos_2 : Vector3 = Vector3(x_pos_2, new_obstacle.position.y,new_obstacle.position.z)
 			#new_obstacle.program_movement(random_pos_1, random_pos_2)
-
-func on_get_ready_to_run():
-	meters_till_next_obstacle = meters_per_obstacle
-	game_lost = false
-
 func random_pos_index_to_vector(index):
 	match index:
 		0:
@@ -122,5 +124,20 @@ func instantiate_an_obstacle(obstacles_array):
 	Globals.obstacle_spawned.emit(new_obstacle)
 	return new_obstacle
 	
+func on_get_ready_to_run(drunk_val):
+	meters_till_next_obstacle = meters_per_obstacle
+	current_min_meters = min_meters
+	current_max_meters = max_meters
+	decrease_meters_timer.start()
+	game_lost = false
+	
 func on_game_lost():
+	current_min_meters = min_meters
+	current_max_meters = max_meters
+	decrease_meters_timer.stop()
 	game_lost = true
+
+func decrease_meters_timer_ended():
+	var step = 18
+	current_min_meters = clamp(current_min_meters - step, final_min_meters, min_meters)
+	current_max_meters = clamp(current_max_meters - step, final_max_meters, max_meters)

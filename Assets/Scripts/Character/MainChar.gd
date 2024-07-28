@@ -30,8 +30,10 @@ func _ready():
 	animation.play()
 	
 func on_get_ready_to_run(drunk_meter):
-	acceleration = minAcceleration + (maxAcceleration-minAcceleration)*drunk_meter
-	drift = maxDrift + (minDrift-maxDrift)*drunk_meter
+	if drunk_meter > 1.0:
+		drunk_meter = 1.0
+	acceleration = minAcceleration + (maxAcceleration-minAcceleration)*(1.0-drunk_meter)
+	drift = maxDrift + abs(minDrift-maxDrift)*drunk_meter
 	if drift > -1.0:
 		drift = -1.0
 	player_velocity = 0
