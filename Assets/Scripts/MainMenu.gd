@@ -27,7 +27,7 @@ func _on_credits_pressed():
 	$CanvasLayer/Credits.visible = true
 
 func _on_how_to_play_pressed():
-	#Globals.SceneMngr.playButtonSFX()
+	Globals.SceneMngr.playButtonSFX()
 	$CanvasLayer/HowToPlay.visible = true
 
 func _on_play_pressed():

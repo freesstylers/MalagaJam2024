@@ -52,6 +52,7 @@ func fade_out():
 	pass
 
 func playButtonSFX():
+	$ButtonSFX.play()
 	pass
 
 func findComponentInChildren(parent, type):

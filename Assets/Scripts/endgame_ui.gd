@@ -7,10 +7,12 @@ func _ready():
 	Globals.player_lost.connect(update_text)
 
 func _on_repeat_pressed():
+	Globals.SceneMngr.playButtonSFX()
 	Globals.SceneMngr.load_scene(Globals.Scene.MENU_SCENE)
 
 func _on_share_pressed():
-	var url = "https://twitter.com/intent/tweet?text=" + ("¡Mi nivel de cuñado ha sido: %s" % Globals.finalScore + "!\n\nSoy un " + prizeTitle + "\n\nJuega a \"Jefe, La Cuenta\" en https://freestylers-studio.itch.io/jefe-la-cuenta").uri_encode()
+	Globals.SceneMngr.playButtonSFX()
+	var url = "https://twitter.com/intent/tweet?text=" + ("¡Mi nivel de cuñado ha sido: %s" % Globals.finalScore + "!\n\nSoy un " + prizeTitle + "\n\nJuega a \"Jefe, La Cuenta\" de @FreeStylers_Dev para la #MJW18 en https://freestylers-studio.itch.io/jefe-la-cuenta").uri_encode()
 	OS.shell_open(url)
 
 var prizeTitle : String = ""
