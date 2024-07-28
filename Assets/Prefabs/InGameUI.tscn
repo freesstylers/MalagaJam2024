@@ -1,20 +1,25 @@
-[gd_scene load_steps=10 format=3 uid="uid://1nvdap51vw02"]
+[gd_scene load_steps=11 format=3 uid="uid://1nvdap51vw02"]
 
 [ext_resource type="Script" path="res://Assets/Scripts/InGameUIManager.gd" id="1_ih1af"]
 [ext_resource type="Texture2D" uid="uid://c75yh7xj5dh5" path="res://Assets/Art/UI/Speed_Bar.png" id="2_py28o"]
 [ext_resource type="Texture2D" uid="uid://bj1gwgdwrkpys" path="res://Assets/Art/UI/Points_UI.png" id="3_0vd7o"]
-[ext_resource type="Shader" path="res://Assets/Prefabs/BeerShader.gdshader" id="3_b5anq"]
+[ext_resource type="Shader" path="res://Assets/Shaders/Scenery/BeerShader.gdshader" id="3_lp1dk"]
 [ext_resource type="FontFile" uid="uid://ccag7totcpphf" path="res://Assets/UI/Fonts/Retro Gaming.ttf" id="4_2u64m"]
 [ext_resource type="Texture2D" uid="uid://0dxi4c5qmu5b" path="res://Assets/Shaders/beer3.jpg" id="4_54jbh"]
 [ext_resource type="Script" path="res://Assets/Scripts/ProgressBarShaderLogic.gd" id="5_5obc4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qm0yl"]
-shader = ExtResource("3_b5anq")
+shader = ExtResource("3_lp1dk")
 shader_parameter/p = 100.0
 shader_parameter/beer = ExtResource("4_54jbh")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wv331"]
 bg_color = Color(1, 0.619608, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uyvr6"]
+shader = ExtResource("3_lp1dk")
+shader_parameter/p = 100.0
+shader_parameter/beer = ExtResource("4_54jbh")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -91,5 +96,19 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_2u64m")
 theme_override_font_sizes/font_size = 30
 text = "9999999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextoDerrota" type="Label" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_uyvr6")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(960, 540)
+theme_override_fonts/font = ExtResource("4_2u64m")
+theme_override_font_sizes/font_size = 60
+text = "HAS PERDIDO"
 horizontal_alignment = 1
 vertical_alignment = 1
