@@ -1,7 +1,7 @@
 extends Control
 
 @export var drinksSprites : Array[Texture]
-@export var UI: Control
+@export var UI: ProgressBeer
 @export var extraFocus : Button
 var rng = RandomNumberGenerator.new()
 
@@ -16,32 +16,32 @@ func _ready():
 	score = 0.0
 	var index:int = 0
 	for iteration in get_children():
-		iteration.icon = drinksSprites[rng.randf_range(0, drinksSprites.size()-1)]
+		iteration.icon = drinksSprites[rng.randf_range(0, drinksSprites.size())]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	secondsMinigame -= delta
 	
 	if secondsMinigame <= 0:
-		Globals.get_ready_to_run.emit(score/100.0)
 		Globals.SceneMngr.load_scene(Globals.Scene.PLAY_SCENE)
+		Globals.get_ready_to_run.emit(score/100.0)
 		pass
 
 func _on_drink_pressed(index):
 	if get_child(index).icon == drinksSprites[0]:
-		score += 3
+		score += 3.0
 	elif get_child(index).icon == drinksSprites[1]:
-		score += 6
+		score += 6.0
 	elif get_child(index).icon == drinksSprites[2]:
-		score += 9 		
+		score += 9.0
 	elif get_child(index).icon == drinksSprites[3]:
-		score += 12 
+		score += 12.0
 	elif get_child(index).icon == drinksSprites[4]:
-		score += 15 
+		score += 15.0
 	elif get_child(index).icon == null:
 		pass
 
-	UI.current_bar_value = score
+	UI.set_progress(score)
 	
 	DrinksSFX.play()
 	get_child((index)).icon = null #Deactivate

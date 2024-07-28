@@ -58,7 +58,6 @@ func Run(deltaTime):
 func on_get_ready_to_run(drunk_meter):
 	player_points = 0
 	player_velocity = 0
-	player_acceleration = 0
 	player_is_playing = false
 	player_is_stunned = false
 	
@@ -67,6 +66,8 @@ func on_get_ready_to_run(drunk_meter):
 	game_lost = false
 	
 	road_manager.clear_obstacles()
+	
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func on_obstacle_avoided():
 	dodgeSound.play()

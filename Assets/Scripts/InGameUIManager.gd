@@ -38,6 +38,7 @@ func go_to_end_game():
 	end_game_UI.visible = true
 	score_meter.get_parent().visible = false
 	speed_bar.get_parent().visible = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func on_get_ready_to_run(drunk_meter):
 	defeat_text.scale = Vector2.ZERO

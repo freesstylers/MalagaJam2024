@@ -252,24 +252,39 @@ anchor_right = 0.5
 anchor_bottom = 0.663234
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Panel/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Panel"]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.0869565
+anchor_top = 0.0782443
+anchor_right = 0.913044
+anchor_bottom = 0.948473
+offset_right = -3.05176e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="Título" type="RichTextLabel" parent="Panel/Panel/VBoxContainer"]
+layout_mode = 2
 bbcode_enabled = true
-text = "[center]
-MAESTRÍA
+text = "[center][font_size={48}]MAESTRÍA
+-----[/font_size][/center]"
+fit_content = true
+metadata/_edit_use_anchors_ = true
 
+[node name="Puntuacion" type="RichTextLabel" parent="Panel/Panel/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][font_size={48}]Puntuación[/font_size]
+[font_size={36}]XXXX[/font_size]
+-----[/center]"
+fit_content = true
+metadata/_edit_use_anchors_ = true
 
-PUNTUACIÓN: 2560
-
-
-TÍTULO
----
-
-CUÑADO PREMIUM
-[/center]"
+[node name="Premio" type="RichTextLabel" parent="Panel/Panel/VBoxContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][font_size={48}]Título[/font_size]
+[font_size={24}]XXXX[/font_size][/center]"
+fit_content = true
 metadata/_edit_use_anchors_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
