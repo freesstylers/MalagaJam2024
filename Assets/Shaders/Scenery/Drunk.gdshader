@@ -20,5 +20,5 @@ void fragment() {
 	vec2 noise2 = vec2(texture(noise_1, noise_uv2).r, texture(noise_2, noise_uv2).r);
 	
 	vec2 base_uv = SCREEN_UV + (noise2)*distorsion_factor*potencia_efecto/1000.0;
-	COLOR = COLOR*distorsion_factor*potencia_color/100.0 + texture(SCREEN_TEXTURE, base_uv);
+	COLOR = COLOR*distorsion_factor*potencia_color/100.0 + textureLod(SCREEN_TEXTURE, base_uv, 0.0);
 }
