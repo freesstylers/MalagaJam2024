@@ -45,9 +45,10 @@ point_count = 2
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_86u0v"]
 shader = ExtResource("2_4t3tn")
+shader_parameter/potencia_efecto = 1.0
+shader_parameter/potencia_color = 1.0
 shader_parameter/distorsion_factor = 0.0
 shader_parameter/distorsion_speed = 1.0
-shader_parameter/c = null
 
 [node name="GameScene" type="Node3D"]
 
