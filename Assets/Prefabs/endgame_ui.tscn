@@ -1,0 +1,301 @@
+[gd_scene load_steps=34 format=3 uid="uid://dnmxiemkn3584"]
+
+[ext_resource type="Theme" uid="uid://by6fgbsw0a1g3" path="res://Assets/UI/Themes/UI_General.tres" id="1_tpi1g"]
+[ext_resource type="Texture2D" uid="uid://c1oqfsrkvoig6" path="res://Assets/Art/Character/cansao/cansao.png" id="2_icxsb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_esw18"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(0, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isqw2"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(140, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxhhr"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(280, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtbbk"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(420, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ctyc"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(560, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjwsb"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(700, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sik55"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(840, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hcmms"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(980, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22irj"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(1120, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhcbw"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(1260, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_71oh0"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(1400, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6amyr"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(1540, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqrib"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(1680, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qrt3"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(1820, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evvr5"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(1960, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y7xc"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(2100, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v86oj"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(2240, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nglgy"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(2380, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7a7a"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(2520, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rwrl"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(2660, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ujst"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(2800, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_875av"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(2940, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8hlu"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(3080, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8oicr"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(3220, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aprma"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(3360, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ammj5"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(3500, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r4xpc"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(3640, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp5jc"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(3780, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2b5h"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(3920, 0, 140, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1bh5"]
+atlas = ExtResource("2_icxsb")
+region = Rect2(4060, 0, 140, 140)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bivet"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_esw18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_isqw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxhhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtbbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ctyc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjwsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sik55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hcmms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22irj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhcbw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_71oh0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6amyr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqrib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qrt3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evvr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2y7xc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v86oj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nglgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7a7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rwrl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ujst")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_875av")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w8hlu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8oicr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aprma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ammj5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r4xpc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mp5jc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2b5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1bh5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="EndgameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_tpi1g")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.229167
+anchor_top = 0.037037
+anchor_right = 0.791667
+anchor_bottom = 0.936111
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+anchor_left = 0.0740741
+anchor_top = 0.123584
+anchor_right = 0.5
+anchor_bottom = 0.663234
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+bbcode_enabled = true
+text = "[center]
+MAESTRÍA
+
+
+PUNTUACIÓN: 2560
+
+
+TÍTULO
+---
+
+CUÑADO PREMIUM
+[/center]"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Panel"]
+position = Vector2(816, 442)
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_bivet")
+autoplay = "default"
+frame = 3
+frame_progress = 0.877442
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0740741
+anchor_top = 0.703399
+anchor_right = 0.5
+anchor_bottom = 0.802266
+theme_override_font_sizes/font_size = 22
+text = "¡Quiero compartir esta jugada!"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0740741
+anchor_top = 0.84346
+anchor_right = 0.5
+anchor_bottom = 0.942327
+theme_override_font_sizes/font_size = 22
+text = "¡Jefe! ¡Otra Ronda!"
+metadata/_edit_use_anchors_ = true
