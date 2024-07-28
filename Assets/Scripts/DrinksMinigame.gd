@@ -10,6 +10,7 @@ var rng = RandomNumberGenerator.new()
 var score = 0.0
 
 @export var secondsMinigame : float = 7.0
+@export var maxScore : float = 100.0
 
 @export var videoPlayer : VideoStreamPlayer = null
 @export var Frases : AudioStreamPlayer2D = null
@@ -45,7 +46,10 @@ func _on_drink_pressed(index):
 		score += 15.0
 	elif get_child(index).icon == null:
 		pass
-
+	
+	if score >= maxScore:
+		score = maxScore
+	
 	UI.set_progress(score)
 	
 	DrinksSFX.play()
