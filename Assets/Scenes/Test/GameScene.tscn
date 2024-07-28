@@ -5,12 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://1nvdap51vw02" path="res://Assets/Prefabs/InGameUI.tscn" id="2_xo5ro"]
 [ext_resource type="Script" path="res://Assets/Scripts/RunManager.gd" id="3_pjs81"]
 [ext_resource type="Script" path="res://Assets/Scripts/ObstaclesSpawnManager.gd" id="4_0whah"]
-[ext_resource type="AudioStream" uid="uid://dp43jurv3epi2" path="res://Assets/Sound/SFX/InGame/Crashes/Crash1.wav" id="4_4vq5d"]
+[ext_resource type="AudioStream" uid="uid://dloi60tn7688l" path="res://Assets/Sound/SFX/InGame/Crashes/Crash1.wav" id="4_4vq5d"]
 [ext_resource type="PackedScene" uid="uid://c8up7sntu1403" path="res://Assets/Prefabs/Obstacle.tscn" id="5_iggs0"]
-[ext_resource type="AudioStream" uid="uid://buytnyhj8limi" path="res://Assets/Sound/SFX/InGame/Crashes/Crash3.wav" id="5_niwak"]
+[ext_resource type="AudioStream" uid="uid://cn3e8o3gpblf3" path="res://Assets/Sound/SFX/InGame/Crashes/Crash3.wav" id="5_niwak"]
 [ext_resource type="Script" path="res://Assets/Scripts/RoadManager.gd" id="6_4lv5d"]
-[ext_resource type="AudioStream" uid="uid://bxfwt0oby5kgg" path="res://Assets/Sound/SFX/InGame/Crashes/Explosion.wav" id="6_u2pak"]
-[ext_resource type="AudioStream" uid="uid://ku741vddn2mw" path="res://Assets/Sound/SFX/InGame/Crashes/Fall 3.wav" id="7_bh7d3"]
+[ext_resource type="AudioStream" uid="uid://bbg3pan05hw12" path="res://Assets/Sound/SFX/InGame/Crashes/Explosion.wav" id="6_u2pak"]
+[ext_resource type="AudioStream" uid="uid://qh251jm4gvfl" path="res://Assets/Sound/SFX/InGame/Crashes/Fall 3.wav" id="7_bh7d3"]
 [ext_resource type="PackedScene" uid="uid://dmwo8b8ys8y4m" path="res://Assets/Prefabs/ObstacleStop.tscn" id="7_k8fks"]
 [ext_resource type="PackedScene" uid="uid://bpkx88jwrfylw" path="res://Assets/Prefabs/ObstacleCacahuete.tscn" id="7_okymv"]
 [ext_resource type="PackedScene" uid="uid://ccw2150gfgt2m" path="res://Assets/Scenes/Character/MainChar.tscn" id="7_yvq0n"]
@@ -98,10 +98,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -39.0501)
 [node name="RightSpawn" type="Node3D" parent="ObstaclesSpawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.25, -39.05)
 
+[node name="DecreaseSpawnMetersTimer" type="Timer" parent="ObstaclesSpawner"]
+wait_time = 10.0
+
 [node name="Escenario" parent="." instance=ExtResource("1_sxt48")]
 
 [node name="Camera3D" parent="." instance=ExtResource("8_a6tfl")]
-current = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.45343, -13.9002)
@@ -120,3 +122,4 @@ autoplay = true
 material = SubResource("ShaderMaterial_86u0v")
 
 [connection signal="timeout" from="RunManager/HitTimer" to="RunManager" method="on_hit_timer_ended"]
+[connection signal="timeout" from="ObstaclesSpawner/DecreaseSpawnMetersTimer" to="ObstaclesSpawner" method="decrease_meters_timer_ended"]

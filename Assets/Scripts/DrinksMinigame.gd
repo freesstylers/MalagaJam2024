@@ -31,7 +31,12 @@ func _process(delta):
 			change = true
 			videoPlayer.visible = true	
 			videoPlayer.play()
-			Frases.play()
+			DrinksSFX.stop()
+			var frasestween : Tween = Frases.create_tween()
+			frasestween.tween_callback(func():
+				Frases.play()
+				).set_delay(3.0)
+			
 
 func _on_drink_pressed(index):
 	if get_child(index).icon == drinksSprites[0]:
